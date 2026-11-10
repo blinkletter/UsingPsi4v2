@@ -1,0 +1,23 @@
+UsingGit.txt
+
+cd path/to/my-new-book                  Move into your project folder
+git init -b main                        Turn the folder into a git repository, with "main" as the default branch
+myst init                               Create a MyST project (adds myst.yml)
+echo "_build/" >> .gitignore            Tell git to ignore MyST's generated build folder
+echo ".DS_Store" >> .gitignore          Tell git to ignore macOS system files
+git status                              Show which files are modified, staged, or untracked
+git add .                               Stage all changed files in the folder for the next commit
+git add chapter1.md                     Stage one specific file
+git commit -m "message"                 Save staged changes as a snapshot in the history, with a description
+git diff                                Show changes you've made but not yet staged
+git diff --staged                       Show changes that are staged and ready to commit
+git log                                 Show the history of commits
+git remote add origin <repo-url>        Link your local repository to a repository on GitHub
+git push -u origin main                 Upload your commits to GitHub the first time and set "main" to track it
+git push                                Upload new commits to GitHub (after the first push)
+
+
+COMMANDS RUN
+
+cd UsingPsi4v2
+git init -b main

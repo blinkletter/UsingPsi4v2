@@ -1,0 +1,14 @@
+*.icloud
+.DS_Store
+
+# MyST build outputs
+_build
+
+# Python / Jupyter
+__pycache__/
+.ipynb_checkpoints/
+
+# GAMESS runs, one folder per chapter (runs/ch1, runs/ch2, ...): nothing in
+# runs/ is committed. The notebooks keep their saved outputs, and data/
+# holds the results tables they need. Run the notebooks to recreate runs/.
+runs/

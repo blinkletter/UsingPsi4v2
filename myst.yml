@@ -1,0 +1,52 @@
+# See docs at: https://mystmd.org/guide/frontmatter
+version: 2
+project:
+  id: 39588acc-c595-4afe-9fbf-72bab512152f
+  # title:
+  # description:
+  keywords: []
+  authors:
+    - name: Barry Linkletter
+      affiliations:
+        - University of Prince Edward Island
+  copyright: '2026'
+  description: A webbook of Psi4 examples and exercises for chemistry students.
+  license: CC-BY-NC-4.0
+  github: https://github.com/blinkletter/UsingPsi4
+  bibliography:
+    - references.bib
+  exclude:
+    - _build
+    - Thumbs.db
+    - .DS_Store
+    - '**.ipynb_checkpoints'
+  exports:
+    - format: pdf
+      template: plain_latex_book
+      output: exports/book.pdf
+  # To autogenerate a Table of Contents, run "myst init --write-toc"
+  toc:
+    - file: index.md
+
+
+site:
+  template: book-theme
+  options:
+#    logo: images/Solvent_plot3.png
+    logo_text: Fun with Psi4, 2nd ed.
+    style: ./custom.css
+    folders: true
+#    baseurl: /samplewebbook/
+#    favicon: images/favicon_io/favicon.ico
+    # used https://favicon.io/favicon-generator/
+#    hide_authors: true
+#    hide_footer_links: true # Hide the previous/next links in the footer
+#    hide_outline: true # Hide the document outline on all pages (right side)
+#    hide_toc: true # left side table of contents
+#  nav: # items will appear in top bar navigation menu
+#    - title: Learn More
+#      url: https://mystmd.org/guide
+#  actions: # items will appear in top bar navigation menu on right side
+#    - title: Learn More
+#      url: https://mystmd.org/guide
+#  domains: [] # ignored by github pages, but can be used to specify custom domains for other hosting platforms
