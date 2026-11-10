@@ -16,8 +16,60 @@ git remote add origin <repo-url>        Link your local repository to a reposito
 git push -u origin main                 Upload your commits to GitHub the first time and set "main" to track it
 git push                                Upload new commits to GitHub (after the first push)
 
+OPTIONS FOR git commit
+
+git commit                              Open your text editor to write a commit message (useful for longer messages)
+git commit -m "message"                 Commit with a message written inline
+git commit -m "Title" -m "Details"      Add a second -m for a longer description below the title line
+git commit -a -m "message"              Stage all modified tracked files and commit in one step (skips git add)
+git commit -am "message"                Short form of -a -m
+git commit -p                           Step through each change and choose which parts to include
+git commit chapter1.md -m "message"     Commit only the named file, ignoring anything else that's staged
+git commit -v                           Show the full diff in the editor while you write the message
+git commit --dry-run                    Show what would be committed without actually committing
+git commit --amend                      Replace the last commit, e.g. to fix its message or add a forgotten file
+git commit --amend --no-edit            Add staged changes to the last commit and keep its message
+git commit --allow-empty -m "message"   Make a commit with no changes (sometimes used to trigger a rebuild)
+git commit -F notes.txt                 Use the contents of a file as the commit message
+git commit -s -m "message"              Add a "Signed-off-by" line with your name to the message
+git commit --author="Name <email>"      Record a different author for this commit
+git commit -q -m "message"              Commit quietly, without the summary output
+
+
+OPTIONS FOR git add
+
+git add chapter1.md                     Stage one specific file
+git add chapter1.md chapter2.md         Stage several named files
+git add chapters/                       Stage everything inside a folder
+git add "*.md"                          Stage all Markdown files matching a pattern (quotes let git handle the pattern)
+git add .                               Stage all changes in the current folder and below, including new and deleted files
+git add -A                              Stage all changes in the whole repository, wherever you run it from
+git add -u                              Stage changes to files git already tracks (edits and deletions), but not new files
+git add -p                              Step through each change and choose which parts to stage
+git add -i                              Open an interactive menu for staging, unstaging, and reviewing files
+git add -n .                            Dry run: show what would be staged without staging it
+git add -v .                            Verbose: list each file as it's staged
+git add -f _build/file.html             Force-stage a file that .gitignore would normally exclude
+git add -N newfile.md                   Tell git to track a new file without staging its contents yet
+
+
+
+
+
+
 
 COMMANDS RUN
 
 cd UsingPsi4v2
 git init -b main
+
+myst init
+
+- then used VSCode to... 
+- add .gitignore
+- edit myst.yml (used 'UsingPSI4' version 1 as template)
+- copied over index.md, references.bib, and custom.css
+- copied styles folder
+
+git status
+git add . 
