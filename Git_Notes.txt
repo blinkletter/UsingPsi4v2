@@ -73,3 +73,8 @@ myst init
 
 git status
 git add . 
+git commit -m "start"
+
+conda activate jupyter2
+
+myst init --gh-pages

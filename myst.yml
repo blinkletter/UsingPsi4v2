@@ -27,7 +27,10 @@ project:
   # To autogenerate a Table of Contents, run "myst init --write-toc"
   toc:
     - file: index.md
-
+    - file: ch1/ch1-setup.md
+      children:
+        - file: ch1/ch1A-test.ipynb
+    - file: ch2/ch2-small-molecules.ipynb
 
 site:
   template: book-theme
