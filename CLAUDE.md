@@ -27,6 +27,25 @@ UsingPsi4 book. Claude's role is **analysis and advice**, not authoring.
 
 Never modify, add, move, rename, or delete anything in a read-only folder.
 
+# Python Environment
+- Use the conda env **`psi4p314`** (`/Users/blink/miniconda3/envs/psi4p314`) for everything:
+  running notebooks, testing Psi4 inputs, and quick Python checks. Python 3.14, Psi4 1.11,
+  plus rdkit, scikit-image, scipy, py3Dmol, ipywidgets, dftd3-python, geometric, pyddx,
+  pcmsolver, JupyterLab, nbconvert and mystmd. It has `pip`.
+- The older `psi4` env (Python 3.15) has **no scikit-image and no pip**, so notebooks that draw
+  orbitals or surfaces (static isosurfaces via `ph.isosurface`) fail there. Don't use it.
+- Neither env is on the PATH; call binaries by full path, e.g.
+  `/Users/blink/miniconda3/envs/psi4p314/bin/python`.
+- Run a notebook in place with that env's Jupyter (its `python3` kernel is psi4p314, so the
+  notebook's kernel metadata stays `python3`):
+  ```bash
+  /Users/blink/miniconda3/envs/psi4p314/bin/jupyter nbconvert --to notebook --execute --inplace --ExecutePreprocessor.timeout=-1 --ExecutePreprocessor.kernel_name=python3 NOTEBOOK.ipynb
+  ```
+  Run from the notebook's own folder so relative paths (`../styles/`, `output/`) resolve.
+- Notebooks set `INTERACTIVE = False` in the setup cell: the `psi4_helpers` drawing functions then
+  make small static matplotlib pictures instead of py3Dmol viewers, which bloat notebooks to tens
+  of MB when saved.
+
 # The New Book (UsingPsi4v2)
 - MyST project configured by `myst.yml`; site title "Fun with Psi4, 2nd ed."; shared
   `custom.css` and `references.bib`.
@@ -41,9 +60,10 @@ Never modify, add, move, rename, or delete anything in a read-only folder.
 
 # Plotting Style (matplotlib)
 Use this house style when reviewing or suggesting plotting code.
-- **Style sheet:** Apply `styles/tufte.mplstyle` before plotting (from a `book/<chapter>/`
-  notebook: `plt.style.use("../../styles/tufte.mplstyle")`). The original is in
-  `UsingPsi4/styles/`; UsingPsi4v2 does not have a `styles/` folder yet.
+- **Style sheet:** Apply `styles/tufte.mplstyle` before plotting. It lives in UsingPsi4v2's
+  `styles/` folder (copied from `UsingPsi4/styles/`, along with `S2_classic2.mplstyle`). Use a
+  path relative to the notebook: `plt.style.use("../styles/tufte.mplstyle")` from a folder one
+  level down such as `temp/`, `"styles/tufte.mplstyle"` from the project root.
 - **Object-oriented API only:** Create figures with `plt.subplots` and draw on the axes
   (`ax.plot`, `ax.set_xlabel`, ...), never `plt.plot` state-machine style. Start with
   `fig, ax = plt.subplots(nrows=1, ncols=1, figsize=(5,4))`; for several panels, e.g.
