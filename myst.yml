@@ -47,6 +47,7 @@ project:
     - file: temp/12-acids-bases.ipynb
     - file: temp/13-hydrogen-bonding.ipynb
     - file: temp/14-solvation.ipynb
+    - file: temp/15-helper-functions.md
     
 site:
   template: book-theme

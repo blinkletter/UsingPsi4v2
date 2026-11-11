@@ -78,10 +78,16 @@ def _shaded(tris, colors, light=(1.0, -0.6, 1.2)):
     return rgba
 
 
+def _opacity(transparency, default):
+    """Opacity (0-1) from a transparency fraction (0 = solid, 1 = invisible); None keeps the default."""
+    return default if transparency is None else 1.0 - transparency
+
+
 def _draw_surface(ax, tris, colors, alpha=0.7):
     if len(tris):
         ax.add_collection3d(Poly3DCollection(tris, facecolors=_shaded(tris, colors),
-                                             edgecolors="none", antialiased=False, alpha=alpha))
+                                             edgecolors="none", linewidths=0,      # no mesh lines
+                                             antialiased=True, alpha=alpha))
 
 
 def _molecule_atoms(mol):
@@ -155,16 +161,22 @@ def show_molecule(mol, interactive=True, ax=None, **view):
         plt.show()
 
 
-def show_orbital(cube_path, mol=None, isoval=0.05, interactive=True, ax=None, **view):
-    """Orbital from a cube file, positive lobe blue and negative lobe red."""
+def show_orbital(cube_path, mol=None, isoval=0.05, interactive=True, ax=None,
+                 transparency=None, **view):
+    """Orbital from a cube file, positive lobe blue and negative lobe red.
+
+    transparency: 0 = solid lobes, 0.75 = 75 % see-through, 1 = invisible.
+    """
     if interactive:
         cube_text = Path(cube_path).read_text()
         v = py3Dmol.view(width=250, height=250)
         v.addModel(mol.save_string_xyz_file() if mol is not None else cube_text,
                    "xyz" if mol is not None else "cube")
         v.setStyle({"stick": {"radius": 0.1}, "sphere": {"scale": 0.15}})
-        v.addVolumetricData(cube_text, "cube", {"isoval": isoval, "color": "blue", "opacity": 0.8})
-        v.addVolumetricData(cube_text, "cube", {"isoval": -isoval, "color": "red", "opacity": 0.8})
+        v.addVolumetricData(cube_text, "cube", {"isoval": isoval, "color": "blue",
+                                                 "opacity": _opacity(transparency, 0.8)})
+        v.addVolumetricData(cube_text, "cube", {"isoval": -isoval, "color": "red",
+                                                 "opacity": _opacity(transparency, 0.8)})
         v.setBackgroundColor("#f2f2f2")
         v.zoomTo()
         if view.get("title"):
@@ -176,41 +188,47 @@ def show_orbital(cube_path, mol=None, isoval=0.05, interactive=True, ax=None, **
     neg = isosurface(dict(cube, data=-cube["data"]), isoval)        # negative lobe
     ax, created = _new_3d_axes(ax)
     _draw_atoms(ax, cube["symbols"], cube["xyz"], scale=0.5)
-    _draw_surface(ax, pos, "#4C72B0")
-    _draw_surface(ax, neg, "#DD4444")
+    _draw_surface(ax, pos, "#4C72B0", alpha=_opacity(transparency, 0.7))
+    _draw_surface(ax, neg, "#DD4444", alpha=_opacity(transparency, 0.7))
     _finish_axes(ax, np.vstack([cube["xyz"], pos.reshape(-1, 3), neg.reshape(-1, 3)]), **view)
     if created:
         plt.show()
 
 
-def show_orbitals(cube_paths, titles=None, mol=None, isoval=0.05, interactive=True, **view):
+def show_orbitals(cube_paths, titles=None, mol=None, isoval=0.05, interactive=True,
+                  transparency=None, **view):
     """Several orbitals: one static figure with a panel for each, or one viewer each."""
     cube_paths = list(cube_paths)
     titles = titles if titles is not None else [Path(p).stem for p in cube_paths]
     if interactive:
         for path, title in zip(cube_paths, titles):
-            show_orbital(path, mol=mol, isoval=isoval, interactive=True, title=title)
+            show_orbital(path, mol=mol, isoval=isoval, interactive=True,
+                         transparency=transparency, title=title)
         return
     n = len(cube_paths)
     fig, axs = plt.subplots(nrows=1, ncols=n, figsize=(2.4 * n, 2.8),
                             subplot_kw={"projection": "3d"}, squeeze=False)
     for ax, path, title in zip(axs[0], cube_paths, titles):
-        show_orbital(path, isoval=isoval, interactive=False, ax=ax, title=title, **view)
+        show_orbital(path, isoval=isoval, interactive=False, ax=ax,
+                     transparency=transparency, title=title, **view)
     plt.show()
 
 
 def show_density(cube_path, isoval=0.001, esp_cube_path=None, esp_range=0.05,
-                 mol=None, interactive=True, ax=None, **view):
-    """Density isosurface; with esp_cube_path, coloured by the ESP (red negative, blue positive)."""
+                 mol=None, interactive=True, ax=None, transparency=None, **view):
+    """Density isosurface; with esp_cube_path, coloured by the ESP (red negative, blue positive).
+
+    transparency: 0 = solid surface, 0.75 = 75 % see-through, 1 = invisible.
+    """
     if interactive:
         dens = Path(cube_path).read_text()
         v = py3Dmol.view(width=400, height=350)
         v.addModel(mol.save_string_xyz_file() if mol is not None else dens,
                    "xyz" if mol is not None else "cube")
         v.setStyle({"stick": {}, "sphere": {"scale": 0.25}})
-        opts = {"isoval": isoval, "color": "lightblue", "opacity": 0.6}
+        opts = {"isoval": isoval, "color": "lightblue", "opacity": _opacity(transparency, 0.6)}
         if esp_cube_path is not None:
-            opts = {"isoval": isoval, "opacity": 0.9,
+            opts = {"isoval": isoval, "opacity": _opacity(transparency, 0.9),
                     "voldata": Path(esp_cube_path).read_text(), "volformat": "cube",
                     "volscheme": {"gradient": "rwb", "min": -esp_range, "max": esp_range}}
         v.addVolumetricData(dens, "cube", opts)
@@ -224,14 +242,14 @@ def show_density(cube_path, isoval=0.001, esp_cube_path=None, esp_range=0.05,
     ax, created = _new_3d_axes(ax)
     _draw_atoms(ax, cube["symbols"], cube["xyz"], scale=0.5)
     if esp_cube_path is None:
-        _draw_surface(ax, tris, "lightblue", alpha=0.5)
+        _draw_surface(ax, tris, "lightblue", alpha=_opacity(transparency, 0.5))
     else:
         esp = read_cube(esp_cube_path)
         centres = tris.mean(1)
         grid_index = np.linalg.solve(esp["axes"].T, (centres - esp["origin"]).T)   # Å -> grid
         values = map_coordinates(esp["data"], grid_index, order=1)
         colours = plt.get_cmap("RdBu")(mcolors.Normalize(-esp_range, esp_range)(values))
-        _draw_surface(ax, tris, colours, alpha=0.9)
+        _draw_surface(ax, tris, colours, alpha=_opacity(transparency, 0.9))
     _finish_axes(ax, np.vstack([cube["xyz"], tris.reshape(-1, 3)]), **view)
     if created:
         plt.show()
