@@ -23,6 +23,7 @@ UsingPsi4 book. Claude's role is **analysis and advice**, not authoring.
 | `/Users/blink/github/docsAndSource/psi4docs` | Read-only | Built Psi4 manuals; use `sphinxman/1.11.x` (reST sources in `_sources/`) unless told otherwise. |
 | `/Users/blink/github/docsAndSource/psi4` | Read-only | Psi4 source code; `samples/` and `tests/` hold example inputs. |
 | `/Users/blink/github/docsAndSource/optking` | Read-only | Optking (Psi4's geometry optimizer) source and docs. |
+| `/Users/blink/github/OLD/TryingPsi4andMore` | Read-only | Earlier experiments: ipywidgets scrubber bars for stepping through a series of structures (PES scans, IRCs, optimizations), and trials of Psi4 options (constraints, TS searches, IRC, orbitals). |
 
 Never modify, add, move, rename, or delete anything in a read-only folder.
 
