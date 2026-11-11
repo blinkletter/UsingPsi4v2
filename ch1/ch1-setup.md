@@ -2,7 +2,7 @@
 
 First we must build a system of ***tools*** for computational chemistry. You can **acquire** the software and **install** it on your computer using the following **instructions**. Instructions are given for both *Windows* and *MacOS* computers.
 
-```{admonition} Stop! You don't have to do any of this
+```{attention} Stop! You don't have to do any of this
 :class: dropdown
 You do not need to install anything at all. **All you really need** is the web browser that you are using to read this book. Every notebook with *Psi4* exercises can be run in your **web browser** using [Google Colab](https://colab.research.google.com). This is useful if your primary computing device is an iPad, a phone, or a laptop computer. The rest of this setup page is for those enthusiasts who want to use *Psi4* on their own **personal computer**. 
 ```
@@ -21,7 +21,7 @@ I have lived in the *Unix* world my whole academic life and am largely unfamilia
 
 There are others options, such as ***GAMESS*** {cite:p}`gamess1`, {cite:p}`gamess2`, ***NWChem*** {cite:p}`nwchem` and ***ORCA*** {cite:p}`orca`. *Psi4* is different from these in that it is installed as a ***Python* module**. We control it by writing *Python* code, and the results come back to us as *Python* variables that we can process, tabulate and plot using all the other **tools** in the *Python* ecosystem.
 
-### *Python* and *Anaconda*
+### Python and Anaconda
 
 *Python* is a programming language that has become the common language of scientific computing. [***Anaconda***](https://www.anaconda.com) is a **distribution** of *Python* that comes with a package manager called ***conda***. *Conda* will download and install *Psi4* and all the other packages it depends on. It also lets us keep the *Psi4* tools in their own separate **environment** so that they do not interfere with anything else on your computer. *Anaconda* can be obtained [here](https://www.anaconda.com/download).
 
@@ -201,7 +201,7 @@ You can **create your own setup** however you like. Just remember to select the 
 Next you should **test** that everything works. Run the *VSCode* and *Avogadro* programs. Then follow the tests in the next section to **confirm** that *Psi4* is installed. The next page will be the first executable *Jupyter* notebook in this web book. there you will run **your first test calculation**.
 
 
-```{warning} AI Statement
+```{attention} AI Statement
 :class: dropdown
 TBA
 ```
