@@ -12,3 +12,6 @@ __pycache__/
 # runs/ is committed. The notebooks keep their saved outputs, and data/
 # holds the results tables they need. Run the notebooks to recreate runs/.
 runs/
+
+# Files written by Claude (Cowork sessions)
+Claude outputs/
