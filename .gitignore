@@ -15,6 +15,6 @@ runs/
 
 # Files written by Claude (Cowork sessions)
 Claude outputs/
-temp/
+#temp/
 output/
 refs/
