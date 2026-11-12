@@ -18,3 +18,8 @@ Claude outputs/
 #temp/
 output/
 refs/
+
+# Psi4 scratch files written next to the notebooks on every run
+psi.*.clean
+timer.dat
+ijk.dat

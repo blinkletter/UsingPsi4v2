@@ -307,12 +307,14 @@ def show_mode(mol, vectors, interactive=True, amplitude=1.0, ax=None, **view):
 
 def bond_length(mol, i, j):
     """Return the distance between atoms i and j in angstroms (0-based indices)."""
+    i = i-1; j = j-1  # convert to 0-based indices
     xyz = mol.geometry().np * psi4.constants.bohr2angstroms
     return np.linalg.norm(xyz[i] - xyz[j])
 
 
 def bond_angle(mol, i, j, k):
     """Return the i-j-k angle in degrees, with j as the central atom (0-based indices)."""
+    i = i-1; j = j-1; k = k-1  # convert to 0-based indices
     xyz = mol.geometry().np
     a = xyz[i] - xyz[j]
     b = xyz[k] - xyz[j]

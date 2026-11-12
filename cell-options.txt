@@ -1,0 +1,76 @@
+MyST code-cell options (#|)
+===========================
+Checked against the mystmd installed in the psi4p314 env.
+
+Put option lines at the very top of a code cell, written as YAML:
+
+    #| key: value
+
+- There must be a space after the "|"  (#|label: is ignored).
+- Options must come before any code. Blank lines among them are fine;
+  the first line of real code ends the option header.
+- A %% cell magic may come before them.
+
+
+OPTIONS
+-------
+label: my-cell        Names the cell so you can link to it or embed it.
+                        Link:   [](#my-cell)   or  [text](#my-cell)
+                        Embed:  ![](#my-cell)  (shows the output again, any page)
+                        Figure: ```{figure} #my-cell
+
+caption: Some text    Makes the cell's output a NUMBERED FIGURE.
+                      Then {numref}`my-cell` gives "Figure N".
+                      (fig-cap: works the same way.)
+
+tbl-cap: Some text    Same, but numbered as a Table (e.g. a DataFrame).
+
+kind: table           Sets the figure type by hand when you use caption:.
+
+tags: [a, b]          A list of display/execution tags (see below).
+                      Must be a list:  tags: [remove-input]
+
+class: my-class       Adds a CSS class to the cell (style it in custom.css).
+
+placeholder: images/x.png
+                      A static image shown in place of the output, e.g.
+                      for PDF export of an interactive py3Dmol view.
+                      Also takes alt:, width:, height:, align:.
+
+
+TAGS  (use inside tags: [...])
+------------------------------
+remove-input       Hide the code completely; show only the output.
+remove-output      Show the code but not the output.
+remove-cell        Leave the whole cell out of the page.
+hide-input         Fold the code into a "show code" dropdown.
+hide-output        Fold the output into a dropdown.
+hide-cell          Fold the whole cell into a dropdown.
+scroll-output      Put long output (Psi4 printouts) in a scrolling box.
+remove-stdout      Drop printed text, keep plots.
+remove-stderr      Drop warnings/errors text.
+skip-execution     Don't run this cell when MyST executes the notebook.
+raises-exception   The cell is expected to raise an error; don't stop.
+
+NOTE: "#| remove-input: true" does NOT work. Use "#| tags: [remove-input]".
+      (remove-input / remove-output as plain options belong to the
+      {embed} directive, not to code cells.)
+
+
+EXAMPLE
+-------
+    #| label: fig-water-scan
+    #| caption: Energy of water as the H-O-H angle changes (HF/6-31G(d)).
+    #| tags: [hide-input, remove-stdout]
+    fig, ax = plt.subplots(nrows=1, ncols=1, figsize=(5,4))
+    ...
+
+In Markdown:   see {numref}`fig-water-scan`   ->  "see Figure 3"
+
+
+REMINDERS
+---------
+- MyST shows the output SAVED in the .ipynb; it does not run the
+  notebook during "myst build". Execute the notebook first.
+- Only one caption-bearing output per cell works best (one plot per cell).
+- Labels: lowercase, numbers, hyphens; unique across the whole book.

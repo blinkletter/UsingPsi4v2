@@ -33,21 +33,24 @@ project:
     - file: ch2-small-molecules.ipynb
       children:
         - file: ch2A-water.ipynb
-    - file: temp/01-structure.ipynb
-    - file: temp/02-optimization.ipynb
-    - file: temp/03-level-of-effort.ipynb
-    - file: temp/04-vibrations.ipynb
-    - file: temp/05-thermochemistry.ipynb
-    - file: temp/06-isotope-effects.ipynb
-    - file: temp/07-charges-dipole.ipynb
-    - file: temp/08-surfaces.ipynb
-    - file: temp/09-molecular-orbitals.ipynb
-    - file: temp/10-bending-scan.ipynb
-    - file: temp/11-bond-dissociation.ipynb
-    - file: temp/12-acids-bases.ipynb
-    - file: temp/13-hydrogen-bonding.ipynb
-    - file: temp/14-solvation.ipynb
-    - file: temp/15-helper-functions.md
+    - file: Appendix1-helper-functions.md
+    - title: Temp Notebooks
+      children:
+      - file: temp/01-structure.ipynb
+      - file: temp/02-optimization.ipynb
+      - file: temp/03-level-of-effort.ipynb
+      - file: temp/04-vibrations.ipynb
+      - file: temp/05-thermochemistry.ipynb
+      - file: temp/06-isotope-effects.ipynb
+      - file: temp/07-charges-dipole.ipynb
+      - file: temp/08-surfaces.ipynb
+      - file: temp/09-molecular-orbitals.ipynb
+      - file: temp/10-bending-scan.ipynb
+      - file: temp/11-bond-dissociation.ipynb
+      - file: temp/12-acids-bases.ipynb
+      - file: temp/13-hydrogen-bonding.ipynb
+      - file: temp/14-solvation.ipynb
+      - file: temp/15-helper-functions.md
     
 site:
   template: book-theme
