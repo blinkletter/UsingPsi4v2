@@ -321,6 +321,17 @@ def bond_angle(mol, i, j, k):
     cos_angle = np.dot(a, b) / (np.linalg.norm(a) * np.linalg.norm(b))
     return np.degrees(np.arccos(cos_angle))
 
+def history_to_xyz(mol, history):
+    """Build a multi-frame XYZ string from an optimization history."""
+    symbols = [mol.symbol(i) for i in range(mol.natom())]
+    frames = []
+    for step, coords in enumerate(history["coordinates"]):
+        xyz = np.asarray(coords) * psi4.constants.bohr2angstroms
+        lines = [str(len(symbols)), f"step {step + 1}"]
+        lines += [f"{s} {x:12.6f} {y:12.6f} {z:12.6f}" for s, (x, y, z) in zip(symbols, xyz)]
+        frames.append("\n".join(lines))
+    return "\n".join(frames) + "\n"
+
 
 def plot_history(history, title):
     """Plot energy relative to the final step (kJ/mol) for a psi4.optimize history."""

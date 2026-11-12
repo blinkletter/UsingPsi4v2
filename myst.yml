@@ -33,6 +33,9 @@ project:
     - file: ch2-small-molecules.ipynb
       children:
         - file: ch2A-water.ipynb
+        - file: ch2B-optimizing.ipynb
+        - file: ch2C-level-of-effort.ipynb
+        - file: ch2D-vibrations.ipynb
     - file: Appendix1-helper-functions.md
     - title: Temp Notebooks
       children:
