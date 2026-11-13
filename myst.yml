@@ -34,6 +34,8 @@ project:
       children:
         - file: ch2A-water.ipynb
         - file: ch2B-optimizing.ipynb
+          children:
+          - file: ch2B-A-optimizing-3Dpath.ipynb
         - file: ch2C-level-of-effort.ipynb
         - file: ch2D-vibrations.ipynb
     - file: Appendix1-helper-functions.md
