@@ -19,7 +19,7 @@ I have lived in the *Unix* world my whole academic life and am largely unfamilia
 
 ***Psi4*** {cite:p}`psi4` ([Website](https://psicode.org)) is an open source *ab initio* computation package that performs **quantum mechanical calculations** for investigating molecular structure and energy. 
 
-There are others options, such as ***GAMESS*** {cite:p}`gamess1`, {cite:p}`gamess2`, ***NWChem*** {cite:p}`nwchem` and ***ORCA*** {cite:p}`orca`. *Psi4* is different from these in that it is installed as a ***Python* module**. We control it by writing *Python* code, and the results come back to us as *Python* variables that we can process, tabulate and plot using all the other **tools** in the *Python* ecosystem.
+There are other options, such as ***GAMESS*** {cite:p}`gamess1`, {cite:p}`gamess2`, ***NWChem*** {cite:p}`nwchem` and ***ORCA*** {cite:p}`orca`. *Psi4* is different from these in that it is installed as a ***Python* module**. We control it by writing *Python* code, and the results come back to us as *Python* variables that we can process, tabulate and plot using all the other **tools** in the *Python* ecosystem.
 
 ### Python and Anaconda
 
@@ -37,7 +37,7 @@ There are others options, such as ***GAMESS*** {cite:p}`gamess1`, {cite:p}`games
 
 You can use *Psi4* and *Avogadro* together. You can build larger molecules using Avogadro and export the input file to use in *Psi4*. You can then run *Psi4* from ***Jupyter* notebooks** using *Visual Studio Code*. After that you can load in various result files to visualize the optimized structure, molecular orbitals and surfaces.
 
-In this note-based web book, all structures will be entered directly from the notebooks and molecular visualization will be created in the notebook itself using *Python* and *py3Dmol* library. I will note when the input file was built with the help of *Avogadro* or when I am displaying images created using *Avogadro*. 
+In this notebook-based web book, all structures will be entered directly from the notebooks and molecular visualization will be created in the notebook itself using *Python* and *py3Dmol* library. I will note when the input file was built with the help of *Avogadro* or when I am displaying images created using *Avogadro*. 
 
 ### py3Dmol
 
@@ -119,7 +119,7 @@ The command prompt will change from `(base)` to `(psi4)`. To leave the environme
 
 ### Test the Installation
 
-With the environment active, start *Python* and ask *Psi4* to calculate something small.
+With the environment active, start *Python* and ask *Psi4* to report its version number. This will confirm that the program now exists.
 
 ```bash
 python -c "import psi4; print(psi4.__version__)"
@@ -198,10 +198,10 @@ You can **create your own setup** however you like. Just remember to select the 
 
 ## Next Steps
 
-Next you should **test** that everything works. Run the *VSCode* and *Avogadro* programs. Then follow the tests in the next section to **confirm** that *Psi4* is installed. The next page will be the first executable *Jupyter* notebook in this web book. there you will run **your first test calculation**.
+Next you should **test** that everything works. Run the *VSCode* and *Avogadro* programs. Then follow the tests in the [next page](ch1A-test.ipynb) to **confirm** that *Psi4* is working. The next page will be the first executable *Jupyter* notebook in this web book. There you will run **your first test calculation**.
 
 
 ```{attention} AI Statement
 :class: dropdown
-TBA
+This page was **carried over**, with revisions, from the setup page of the **first edition** of this book. About half of the text is my own **original writing**. Most of it is from the first edition, where it was adapted from the setup page of the author's [previous web book on using *GAMESS*](https://blinkletter.github.io/UsingGAMESS). It includes the introduction, the description of the software and **new passages** on how *Avogadro* and *py3Dmol* are used in this book. The other half, the step-by-step installation instructions, was written for the first edition of my *GAMESS* instructions by an **LLM system** at my request, and was then edited. Claude (Anthropic) with Claude Code was used to compare this page with the earlier versions and to estimate these proportions. I confirmed the instructions for *MacOS*. I seldom uses *Windows* and cannot vouch for the *Windows* instructions. Please report any problems.
 ```

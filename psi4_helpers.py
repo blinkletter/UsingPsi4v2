@@ -148,7 +148,9 @@ def show_molecule(mol, interactive=True, ax=None, **view):
     if interactive:
         v = py3Dmol.view(width=400, height=300)
         v.addModel(mol.save_string_xyz_file(), "xyz")
-        v.setStyle({"stick": {}, "sphere": {"scale": 0.25}})
+        v.setStyle({"stick": {"radius": 0.05}, "sphere": {"scale": 0.15}})     # thinner bonds (default is 0.25)
+#        v.setStyle({"stick": {}, "sphere": {"scale": 0.25}}) # traditional settings
+#        v.setViewStyle({"style": "outline", "color": "black", "width": 0.03}) # set outline
         v.setBackgroundColor("#f2f2f2")
         v.zoomTo()
         v.show()
@@ -172,11 +174,13 @@ def show_orbital(cube_path, mol=None, isoval=0.05, interactive=True, ax=None,
         v = py3Dmol.view(width=250, height=250)
         v.addModel(mol.save_string_xyz_file() if mol is not None else cube_text,
                    "xyz" if mol is not None else "cube")
-        v.setStyle({"stick": {"radius": 0.1}, "sphere": {"scale": 0.15}})
+        v.setStyle({"stick": {"radius": 0.05}, "sphere": {"scale": 0.15}})     # thinner bonds (default is 0.25)
+#        v.setStyle({"stick": {}, "sphere": {"scale": 0.25}}) # traditional seetings
+#        v.setViewStyle({"style": "outline", "color": "black", "width": 0.03}) # set outline
         v.addVolumetricData(cube_text, "cube", {"isoval": isoval, "color": "blue",
-                                                 "opacity": _opacity(transparency, 0.8)})
+                                                 "opacity": _opacity(transparency, 0.7)})
         v.addVolumetricData(cube_text, "cube", {"isoval": -isoval, "color": "red",
-                                                 "opacity": _opacity(transparency, 0.8)})
+                                                 "opacity": _opacity(transparency, 0.7)})
         v.setBackgroundColor("#f2f2f2")
         v.zoomTo()
         if view.get("title"):
@@ -225,7 +229,9 @@ def show_density(cube_path, isoval=0.001, esp_cube_path=None, esp_range=0.05,
         v = py3Dmol.view(width=400, height=350)
         v.addModel(mol.save_string_xyz_file() if mol is not None else dens,
                    "xyz" if mol is not None else "cube")
-        v.setStyle({"stick": {}, "sphere": {"scale": 0.25}})
+        v.setStyle({"stick": {"radius": 0.05}, "sphere": {"scale": 0.15}})     # thinner bonds (default is 0.25)
+#        v.setStyle({"stick": {}, "sphere": {"scale": 0.25}})
+#        v.setViewStyle({"style": "outline", "color": "black", "width": 0.03}) # set outline
         opts = {"isoval": isoval, "color": "lightblue", "opacity": _opacity(transparency, 0.6)}
         if esp_cube_path is not None:
             opts = {"isoval": isoval, "opacity": _opacity(transparency, 0.9),
@@ -260,7 +266,9 @@ def show_frames(xyz_text, interactive=True, nshow=5, interval=500, loop="forward
     if interactive:
         v = py3Dmol.view(width=400, height=300)
         v.addModelsAsFrames(xyz_text, "xyz")
-        v.setStyle({"stick": {}, "sphere": {"scale": 0.25}})
+        v.setStyle({"stick": {"radius": 0.05}, "sphere": {"scale": 0.15}})     # thinner bonds (default is 0.25)
+#        v.setStyle({"stick": {}, "sphere": {"scale": 0.25}})
+#        v.setViewStyle({"style": "outline", "color": "black", "width": 0.03}) # set outline
         v.setBackgroundColor("#f2f2f2")
         v.zoomTo()
         v.animate({"loop": loop, "interval": interval})
@@ -290,7 +298,9 @@ def show_mode(mol, vectors, interactive=True, amplitude=1.0, ax=None, **view):
             lines.append(f"{s} {x:.6f} {y:.6f} {z:.6f} {dx:.6f} {dy:.6f} {dz:.6f}")
         v = py3Dmol.view(width=300, height=250)
         v.addModel("\n".join(lines), "xyz", {"vibrate": {"frames": 10, "amplitude": amplitude}})
-        v.setStyle({"stick": {}, "sphere": {"scale": 0.25}})
+        v.setStyle({"stick": {"radius": 0.05}, "sphere": {"scale": 0.15}})     # thinner bonds (default is 0.25)
+#        v.setStyle({"stick": {}, "sphere": {"scale": 0.25}})
+#        v.setViewStyle({"style": "outline", "color": "black", "width": 0.03}) # set outline
         v.setBackgroundColor("#f2f2f2")
         v.zoomTo()
         v.animate({"loop": "backAndForth"})
