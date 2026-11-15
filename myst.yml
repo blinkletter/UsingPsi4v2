@@ -38,6 +38,7 @@ project:
           - file: ch2B-A-optimizing-3Dpath.ipynb
         - file: ch2C-level-of-effort.ipynb
         - file: ch2D-vibrations.ipynb
+        - file: ch3J-bending-scan.ipynb
     - file: Appendix1-helper-functions.md
     - title: Temp Notebooks
       children:
