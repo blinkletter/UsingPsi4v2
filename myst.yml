@@ -38,8 +38,22 @@ project:
           - file: ch2B-A-optimizing-3Dpath.ipynb
         - file: ch2C-level-of-effort.ipynb
         - file: ch2D-vibrations.ipynb
-        - file: ch3J-bending-scan.ipynb
-    - file: Appendix1-helper-functions.md
+        - file: ch2E-thermochemistry.ipynb
+        - file: ch2F-isotope-effects.ipynb
+        - file: ch2G-charges-dipole.ipynb
+        - file: ch2H-surfaces.ipynb
+        - file: ch2I-molecular-orbitals.ipynb
+        - file: ch2J-bending-scan.ipynb
+        - file: ch2K-bond-dissociation.ipynb
+        - file: ch2L-acids-bases.ipynb
+        - file: ch2M-hydrogen-bonding.ipynb
+        - file: ch2N-solvation.ipynb
+    - title: Appendices
+      children:
+        - file: Appendix1-helper-functions.md
+        - file: Appendix2-molecule-object.md
+        - file: Appendix3-psi-variables.md
+        - file: Appendix4-inside-psi4.md
     - title: Temp Notebooks
       children:
       - file: temp/01-structure.ipynb

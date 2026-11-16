@@ -83,7 +83,7 @@ python --version
 :class: dropdown
 If you would rather not install the whole *Anaconda* distribution, which is large and comes with many packages that we will not use, you can install ***Miniconda*** or ***Miniforge*** instead. These are small installers that provide only *Python* and *conda*. Every *conda* command below works the same way.
 ```
-
+(installing)=
 ## Installing *Psi4* and *Jupyter*
 
 *Psi4* is distributed as a *conda* package on the ***conda-forge*** channel. We will create a new **environment** called `psi4` that contains *Psi4*, *Jupyter* and the other *Python* packages we will use for analyzing and plotting our data. The same commands work in the *MacOS Terminal* and the *Windows Anaconda Prompt*.
