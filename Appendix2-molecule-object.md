@@ -1,5 +1,6 @@
 # The Molecule Object
 
+
 When we build a molecule with `psi4.geometry()`, *Psi4* hands back a **Molecule object**:
 
 ```python
@@ -15,6 +16,7 @@ a = 104.5
 
 `water` is more than the text we typed. It knows its atoms, masses, charge, symmetry and coordinates, and it carries **methods** (functions attached to the object) that report or change those things. Typing `dir(water)` lists them all: 156 names in *Psi4* 1.11. The 28 that begin with an underscore (`__init__`, `__repr__`, ...) are ordinary *Python* plumbing, and we can ignore them. This page explains the other 128, grouped by what they are for.
 
+(whatyouwilllearnA2)=
 ## What You Will Learn
 - How to ask a Molecule object about its atoms, coordinates, symmetry and fragments.
 - Which methods change a molecule, and how to make a safe copy first.

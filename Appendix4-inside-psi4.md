@@ -4,6 +4,7 @@ Every notebook in this book starts with `import psi4`. That one line brings in t
 
 This page goes through all 180 names, grouped by what they are for. The first section covers the ones we use all the time; later sections can be skimmed.
 
+(whatyouwilllearnA4)=
 ## What You Will Learn
 - Which functions in `psi4` run calculations, and which ones set up the job.
 - How to check what your installation can do: version, add-ons, available methods.

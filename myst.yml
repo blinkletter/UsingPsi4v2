@@ -54,6 +54,7 @@ project:
         - file: Appendix2-molecule-object.md
         - file: Appendix3-psi-variables.md
         - file: Appendix4-inside-psi4.md
+        - file: Appendix5-wavefunction-object.md
     - title: Temp Notebooks
       children:
       - file: temp/01-structure.ipynb
