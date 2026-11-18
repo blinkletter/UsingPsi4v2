@@ -27,34 +27,57 @@ project:
   # To autogenerate a Table of Contents, run "myst init --write-toc"
   toc:
     - file: index.md
-    - file: ch1-setup.md
+    - file: ch1/ch1-setup.md
       children:
-        - file: ch1A-test.ipynb
-    - file: ch2-small-molecules.ipynb
+        - file: ch1/1A-test/ch1A-test.ipynb
+    - file: ch2/ch2-small-molecules.ipynb
       children:
-        - file: ch2A-water.ipynb
-        - file: ch2B-optimizing.ipynb
+        - file: ch2/2A-water/ch2A-water.ipynb
+        - file: ch2/2B-optimizing/ch2B-optimizing.ipynb
           children:
-          - file: ch2B-A-optimizing-3Dpath.ipynb
-        - file: ch2C-level-of-effort.ipynb
-        - file: ch2D-vibrations.ipynb
-        - file: ch2E-thermochemistry.ipynb
-        - file: ch2F-isotope-effects.ipynb
-        - file: ch2G-charges-dipole.ipynb
-        - file: ch2H-surfaces.ipynb
-        - file: ch2I-molecular-orbitals.ipynb
-        - file: ch2J-bending-scan.ipynb
-        - file: ch2K-bond-dissociation.ipynb
-        - file: ch2L-acids-bases.ipynb
-        - file: ch2M-hydrogen-bonding.ipynb
-        - file: ch2N-solvation.ipynb
+          - file: ch2/2B-optimizing/ch2B-A-optimizing-3Dpath.ipynb
+        - file: ch2/2C-level-of-effort/ch2C-level-of-effort.ipynb
+        - file: ch2/2D-vibrations/ch2D-vibrations.ipynb
+        - file: ch2/2E-thermochemistry/ch2E-thermochemistry.ipynb
+        - file: ch2/2F-isotope-effects/ch2F-isotope-effects.ipynb
+        - file: ch2/2G-charges-dipole/ch2G-charges-dipole.ipynb
+        - file: ch2/2H-surfaces/ch2H-surfaces.ipynb
+        - file: ch2/2I-molecular-orbitals/ch2I-molecular-orbitals.ipynb
+        - file: ch2/2J-bending-scan/ch2J-bending-scan.ipynb
+        - file: ch2/2K-bond-dissociation/ch2K-bond-dissociation.ipynb
+        - file: ch2/2L-acids-bases/ch2L-acids-bases.ipynb
+        - file: ch2/2M-hydrogen-bonding/ch2M-hydrogen-bonding.ipynb
+        - file: ch2/2N-solvation/ch2N-solvation.ipynb
+    - file: ch3/ch3-conformations.ipynb
+      children:
+        - file: ch3/3A-methane/ch3A-methane.ipynb
+        - file: ch3/3B-ethane/ch3B-ethane.ipynb
+        - file: ch3/3C-butane/ch3C-butane.ipynb
+          children:
+          - file: ch3/3C-butane/ch3C-A-workflow.ipynb
+          - file: ch3/3C-butane/ch3C-B-workflow-data.ipynb
+    - file: ch4/ch4-pi-orbitals.ipynb
+      children:
+        - file: ch4/4A-allyl-cation/ch4A-allyl-cation.ipynb
+        - file: ch4/4B-benzene/ch4B-benzene.ipynb
+        - file: ch4/4C-butadiene/ch4C-butadiene.ipynb
+    - file: ch5/ch5-reactions.ipynb
+      children:
+        - file: ch5/5A-diels-alder/ch5A-diels-alder.ipynb
+          children:
+          - file: ch5/5A-diels-alder/ch5A-A-scan-data.ipynb
+        - file: ch5/5B-solvent/ch5B-solvent.ipynb
+          children:
+          - file: ch5/5B-solvent/ch5B-A-irc-data.ipynb
+          - file: ch5/5B-solvent/ch5B-B-irc-plots.ipynb
+          - file: ch5/5B-solvent/ch5B-C-microsolvation.ipynb
     - title: Appendices
       children:
-        - file: Appendix1-helper-functions.md
-        - file: Appendix2-molecule-object.md
-        - file: Appendix3-psi-variables.md
-        - file: Appendix4-inside-psi4.md
-        - file: Appendix5-wavefunction-object.md
+        - file: appendices/Appendix1-helper-functions.md
+        - file: appendices/Appendix2-molecule-object.md
+        - file: appendices/Appendix3-psi-variables.md
+        - file: appendices/Appendix4-inside-psi4.md
+        - file: appendices/Appendix5-wavefunction-object.md
     - title: Temp Notebooks
       children:
       - file: temp/01-structure.ipynb

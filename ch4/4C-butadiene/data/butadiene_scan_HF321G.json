@@ -1,0 +1,202 @@
+[
+  {
+    "Torsion (deg)":0.0,
+    "Energy (Eh)":-154.053943188,
+    "Steps":19,
+    "Delta E (kJ\/mol)":14.4746134125,
+    "GAMESS (Eh)":-154.0539433,
+    "Stationary":true
+  },
+  {
+    "Torsion (deg)":5.0,
+    "Energy (Eh)":-154.0539921848,
+    "Steps":21,
+    "Delta E (kJ\/mol)":14.3459721469,
+    "GAMESS (Eh)":-154.0539921,
+    "Stationary":false
+  },
+  {
+    "Torsion (deg)":10.0,
+    "Energy (Eh)":-154.0541309056,
+    "Steps":22,
+    "Delta E (kJ\/mol)":13.9817607743,
+    "GAMESS (Eh)":-154.0541309,
+    "Stationary":false
+  },
+  {
+    "Torsion (deg)":20.0,
+    "Energy (Eh)":-154.0545762368,
+    "Steps":19,
+    "Delta E (kJ\/mol)":12.8125440298,
+    "GAMESS (Eh)":-154.0545762,
+    "Stationary":false
+  },
+  {
+    "Torsion (deg)":30.0,
+    "Energy (Eh)":-154.0550028329,
+    "Steps":17,
+    "Delta E (kJ\/mol)":11.6925160184,
+    "GAMESS (Eh)":-154.0550029,
+    "Stationary":false
+  },
+  {
+    "Torsion (deg)":35.0,
+    "Energy (Eh)":-154.0551183008,
+    "Steps":16,
+    "Delta E (kJ\/mol)":11.3893549551,
+    "GAMESS (Eh)":-154.0551183,
+    "Stationary":false
+  },
+  {
+    "Torsion (deg)":38.15,
+    "Energy (Eh)":-154.0551402454,
+    "Steps":20,
+    "Delta E (kJ\/mol)":11.3317395367,
+    "GAMESS (Eh)":-154.0551402,
+    "Stationary":true
+  },
+  {
+    "Torsion (deg)":40.0,
+    "Energy (Eh)":-154.0551324458,
+    "Steps":17,
+    "Delta E (kJ\/mol)":11.3522174058,
+    "GAMESS (Eh)":-154.0551325,
+    "Stationary":false
+  },
+  {
+    "Torsion (deg)":45.0,
+    "Energy (Eh)":-154.0550306462,
+    "Steps":18,
+    "Delta E (kJ\/mol)":11.6194922663,
+    "GAMESS (Eh)":-154.0550307,
+    "Stationary":false
+  },
+  {
+    "Torsion (deg)":50.0,
+    "Energy (Eh)":-154.0548093552,
+    "Steps":18,
+    "Delta E (kJ\/mol)":12.200491544,
+    "GAMESS (Eh)":-154.0548094,
+    "Stationary":false
+  },
+  {
+    "Torsion (deg)":60.0,
+    "Energy (Eh)":-154.0540449337,
+    "Steps":21,
+    "Delta E (kJ\/mol)":14.2074801095,
+    "GAMESS (Eh)":-154.0540449,
+    "Stationary":false
+  },
+  {
+    "Torsion (deg)":80.0,
+    "Energy (Eh)":-154.0518629633,
+    "Steps":18,
+    "Delta E (kJ\/mol)":19.9362424853,
+    "GAMESS (Eh)":-154.051863,
+    "Stationary":false
+  },
+  {
+    "Torsion (deg)":85.0,
+    "Energy (Eh)":-154.0513572702,
+    "Steps":18,
+    "Delta E (kJ\/mol)":21.2639396442,
+    "GAMESS (Eh)":-154.0513572,
+    "Stationary":false
+  },
+  {
+    "Torsion (deg)":90.0,
+    "Energy (Eh)":-154.050934322,
+    "Steps":17,
+    "Delta E (kJ\/mol)":22.3743897641,
+    "GAMESS (Eh)":-154.0509343,
+    "Stationary":false
+  },
+  {
+    "Torsion (deg)":95.0,
+    "Energy (Eh)":-154.0506281059,
+    "Steps":18,
+    "Delta E (kJ\/mol)":23.1783602489,
+    "GAMESS (Eh)":-154.0506281,
+    "Stationary":false
+  },
+  {
+    "Torsion (deg)":100.0,
+    "Energy (Eh)":-154.050470674,
+    "Steps":18,
+    "Delta E (kJ\/mol)":23.5916974403,
+    "GAMESS (Eh)":-154.0504706,
+    "Stationary":false
+  },
+  {
+    "Torsion (deg)":102.02,
+    "Energy (Eh)":-154.0504557335,
+    "Steps":3,
+    "Delta E (kJ\/mol)":23.6309239441,
+    "GAMESS (Eh)":-154.0504558,
+    "Stationary":true
+  },
+  {
+    "Torsion (deg)":105.0,
+    "Energy (Eh)":-154.0504892304,
+    "Steps":20,
+    "Delta E (kJ\/mol)":23.5429778236,
+    "GAMESS (Eh)":-154.0504893,
+    "Stationary":false
+  },
+  {
+    "Torsion (deg)":110.0,
+    "Energy (Eh)":-154.0507018947,
+    "Steps":17,
+    "Delta E (kJ\/mol)":22.9846277813,
+    "GAMESS (Eh)":-154.0507019,
+    "Stationary":false
+  },
+  {
+    "Torsion (deg)":120.0,
+    "Energy (Eh)":-154.0517054581,
+    "Steps":26,
+    "Delta E (kJ\/mol)":20.3497724061,
+    "GAMESS (Eh)":-154.0517054,
+    "Stationary":false
+  },
+  {
+    "Torsion (deg)":140.0,
+    "Energy (Eh)":-154.0551448407,
+    "Steps":21,
+    "Delta E (kJ\/mol)":11.319674536,
+    "GAMESS (Eh)":-154.0551449,
+    "Stationary":false
+  },
+  {
+    "Torsion (deg)":160.0,
+    "Energy (Eh)":-154.0582688587,
+    "Steps":21,
+    "Delta E (kJ\/mol)":3.1175664243,
+    "GAMESS (Eh)":-154.058269,
+    "Stationary":false
+  },
+  {
+    "Torsion (deg)":170.0,
+    "Energy (Eh)":-154.0591534681,
+    "Steps":18,
+    "Delta E (kJ\/mol)":0.7950247613,
+    "GAMESS (Eh)":-154.0591535,
+    "Stationary":false
+  },
+  {
+    "Torsion (deg)":175.0,
+    "Energy (Eh)":-154.0593802745,
+    "Steps":18,
+    "Delta E (kJ\/mol)":0.1995447307,
+    "GAMESS (Eh)":-154.0593804,
+    "Stationary":false
+  },
+  {
+    "Torsion (deg)":180.0,
+    "Energy (Eh)":-154.0594565546,
+    "Steps":19,
+    "Delta E (kJ\/mol)":-0.0007286835,
+    "GAMESS (Eh)":-154.0594778,
+    "Stationary":true
+  }
+]

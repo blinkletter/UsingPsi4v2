@@ -1,0 +1,135 @@
+[
+  {
+    "Torsion":0,
+    "Final torsion":0.0004304431,
+    "Energy":-156.4228464782,
+    "Steps":10,
+    "Max gradient":0.0000208559
+  },
+  {
+    "Torsion":10,
+    "Final torsion":10.0,
+    "Energy":-156.4233726902,
+    "Steps":10,
+    "Max gradient":0.0000145857
+  },
+  {
+    "Torsion":20,
+    "Final torsion":20.0,
+    "Energy":-156.4247889217,
+    "Steps":9,
+    "Max gradient":0.0000272258
+  },
+  {
+    "Torsion":30,
+    "Final torsion":30.0,
+    "Energy":-156.4267021623,
+    "Steps":9,
+    "Max gradient":0.0000223878
+  },
+  {
+    "Torsion":40,
+    "Final torsion":40.0,
+    "Energy":-156.4286426645,
+    "Steps":8,
+    "Max gradient":0.0000562791
+  },
+  {
+    "Torsion":50,
+    "Final torsion":50.0,
+    "Energy":-156.4301846974,
+    "Steps":8,
+    "Max gradient":0.0000369534
+  },
+  {
+    "Torsion":60,
+    "Final torsion":60.0,
+    "Energy":-156.43106155,
+    "Steps":7,
+    "Max gradient":0.0000281419
+  },
+  {
+    "Torsion":70,
+    "Final torsion":70.0,
+    "Energy":-156.4312168286,
+    "Steps":6,
+    "Max gradient":0.0000668933
+  },
+  {
+    "Torsion":80,
+    "Final torsion":80.0,
+    "Energy":-156.4306888494,
+    "Steps":5,
+    "Max gradient":0.0000777932
+  },
+  {
+    "Torsion":90,
+    "Final torsion":90.0,
+    "Energy":-156.4295738497,
+    "Steps":5,
+    "Max gradient":0.0000573484
+  },
+  {
+    "Torsion":100,
+    "Final torsion":100.0,
+    "Energy":-156.428220876,
+    "Steps":5,
+    "Max gradient":0.0000592563
+  },
+  {
+    "Torsion":110,
+    "Final torsion":110.0,
+    "Energy":-156.4271414172,
+    "Steps":5,
+    "Max gradient":0.0000648952
+  },
+  {
+    "Torsion":120,
+    "Final torsion":120.0,
+    "Energy":-156.4267262681,
+    "Steps":5,
+    "Max gradient":0.0000725887
+  },
+  {
+    "Torsion":130,
+    "Final torsion":130.0,
+    "Energy":-156.4271134847,
+    "Steps":6,
+    "Max gradient":0.0000157152
+  },
+  {
+    "Torsion":140,
+    "Final torsion":140.0,
+    "Energy":-156.428185117,
+    "Steps":5,
+    "Max gradient":0.0000804924
+  },
+  {
+    "Torsion":150,
+    "Final torsion":150.0,
+    "Energy":-156.4296330803,
+    "Steps":5,
+    "Max gradient":0.0000696278
+  },
+  {
+    "Torsion":160,
+    "Final torsion":160.0,
+    "Energy":-156.4310601549,
+    "Steps":5,
+    "Max gradient":0.0000644174
+  },
+  {
+    "Torsion":170,
+    "Final torsion":170.0,
+    "Energy":-156.4320918055,
+    "Steps":5,
+    "Max gradient":0.0000574974
+  },
+  {
+    "Torsion":180,
+    "Final torsion":179.9993050484,
+    "Energy":-156.4324663631,
+    "Steps":4,
+    "Max gradient":0.0002513138
+  }
+]

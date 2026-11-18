@@ -1,0 +1,23 @@
+[
+  {
+    "Group":"C1+H5+H7",
+    "Lowdin HF":0.5069800909,
+    "Mulliken HF":0.261906659,
+    "Lowdin B3LYP":0.4695838746,
+    "Mulliken B3LYP":0.2239375334
+  },
+  {
+    "Group":"C3+H4",
+    "Lowdin HF":-0.0139601818,
+    "Mulliken HF":0.476186682,
+    "Lowdin B3LYP":0.0608322507,
+    "Mulliken B3LYP":0.5521249333
+  },
+  {
+    "Group":"C2+H6+H8",
+    "Lowdin HF":0.5069800909,
+    "Mulliken HF":0.261906659,
+    "Lowdin B3LYP":0.4695838746,
+    "Mulliken B3LYP":0.2239375334
+  }
+]

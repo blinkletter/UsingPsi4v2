@@ -1,0 +1,23 @@
+[
+  {
+    "Job":"C1 (from xyz file)",
+    "Computational point group":"c1",
+    "Energy (Eh)":-40.2091497942,
+    "C-H length (A)":1.0843493688,
+    "HOMO (Eh)":-0.5460515419
+  },
+  {
+    "Job":"Td (D2 frame)",
+    "Computational point group":"d2",
+    "Energy (Eh)":-40.2091496687,
+    "C-H length (A)":1.084577756,
+    "HOMO (Eh)":-0.5460430266
+  },
+  {
+    "Job":"Td (C2v frame)",
+    "Computational point group":"c2v",
+    "Energy (Eh)":-40.2091496687,
+    "C-H length (A)":1.084577756,
+    "HOMO (Eh)":-0.5460430327
+  }
+]

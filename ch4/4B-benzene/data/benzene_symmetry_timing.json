@@ -1,0 +1,58 @@
+[
+  {
+    "Method":"B3LYP\/aug-cc-pCVTZ",
+    "Symmetry":"D2H",
+    "Operations":8,
+    "Time (s)":17.294629097,
+    "Energy (Eh)":-232.3417539964
+  },
+  {
+    "Method":"B3LYP\/aug-cc-pCVTZ",
+    "Symmetry":"C2V",
+    "Operations":4,
+    "Time (s)":22.5939347744,
+    "Energy (Eh)":-232.3417539955
+  },
+  {
+    "Method":"B3LYP\/aug-cc-pCVTZ",
+    "Symmetry":"C2H",
+    "Operations":4,
+    "Time (s)":23.0678079128,
+    "Energy (Eh)":-232.3417519605
+  },
+  {
+    "Method":"B3LYP\/aug-cc-pCVTZ",
+    "Symmetry":"C1",
+    "Operations":1,
+    "Time (s)":23.1069941521,
+    "Energy (Eh)":-232.3417518675
+  },
+  {
+    "Method":"CCSD(T)\/cc-pVDZ",
+    "Symmetry":"D2H",
+    "Operations":8,
+    "Time (s)":7.1593141556,
+    "Energy (Eh)":-231.5870886874
+  },
+  {
+    "Method":"CCSD(T)\/cc-pVDZ",
+    "Symmetry":"C2V",
+    "Operations":4,
+    "Time (s)":9.8654739857,
+    "Energy (Eh)":-231.5870886874
+  },
+  {
+    "Method":"CCSD(T)\/cc-pVDZ",
+    "Symmetry":"C2H",
+    "Operations":4,
+    "Time (s)":10.8885340691,
+    "Energy (Eh)":-231.5870886874
+  },
+  {
+    "Method":"CCSD(T)\/cc-pVDZ",
+    "Symmetry":"C1",
+    "Operations":1,
+    "Time (s)":55.4624021053,
+    "Energy (Eh)":-231.5870886575
+  }
+]

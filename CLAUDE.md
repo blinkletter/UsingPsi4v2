@@ -41,7 +41,7 @@ Never modify, add, move, rename, or delete anything in a read-only folder.
   ```bash
   /Users/blink/miniconda3/envs/psi4p314/bin/jupyter nbconvert --to notebook --execute --inplace --ExecutePreprocessor.timeout=-1 --ExecutePreprocessor.kernel_name=python3 NOTEBOOK.ipynb
   ```
-  Run from the notebook's own folder so relative paths (`../styles/`, `output/`) resolve.
+  Run from the notebook's own folder so relative paths (`../../styles/`, `output/`) resolve.
 - Notebooks set `INTERACTIVE = False` in the setup cell: the `psi4_helpers` drawing functions then
   make small static matplotlib pictures instead of py3Dmol viewers, which bloat notebooks to tens
   of MB when saved.
@@ -53,8 +53,13 @@ Never modify, add, move, rename, or delete anything in a read-only folder.
   reviewing, point out pages that exist but aren't in the TOC (or vice versa).
 - The original used chapter folders `book/NN-Name/` with files `NN1-...`, assets in
   `images/` and `styles/`, and relative paths from chapters (`../../images/`).
-  The rewrite may change this structure — follow what Barry sets up, and flag
-  broken relative paths, missing images, or missing citations.
+  The rewrite uses chapter folders with one folder per section:
+  `ch2/ch2-small-molecules.ipynb` (chapter page), `ch2/2A-water/ch2A-water.ipynb` (section),
+  with that section's figures in `ch2/2A-water/images/` and its Psi4 output in
+  `ch2/2A-water/output/` (`output_dir = Path("output")`, gitignored). Shared files stay at the
+  root: `psi4_helpers.py` (`sys.path.insert(0, "../..")`), `styles/`, `custom.css`,
+  `references.bib`. Appendices are in `appendices/`. Flag broken relative paths, missing
+  images, or missing citations.
 - Prefer MyST directives and roles (admonitions, figures, cross-references, math,
   `{cite}`) over raw HTML when giving advice.
 
@@ -62,8 +67,9 @@ Never modify, add, move, rename, or delete anything in a read-only folder.
 Use this house style when reviewing or suggesting plotting code.
 - **Style sheet:** Apply `styles/tufte.mplstyle` before plotting. It lives in UsingPsi4v2's
   `styles/` folder (copied from `UsingPsi4/styles/`, along with `S2_classic2.mplstyle`). Use a
-  path relative to the notebook: `plt.style.use("../styles/tufte.mplstyle")` from a folder one
-  level down such as `temp/`, `"styles/tufte.mplstyle"` from the project root.
+  path relative to the notebook: `plt.style.use("../../styles/tufte.mplstyle")` from a section
+  folder such as `ch2/2A-water/`, `"../styles/tufte.mplstyle"` from a folder one level down
+  such as `temp/`.
 - **Object-oriented API only:** Create figures with `plt.subplots` and draw on the axes
   (`ax.plot`, `ax.set_xlabel`, ...), never `plt.plot` state-machine style. Start with
   `fig, ax = plt.subplots(nrows=1, ncols=1, figsize=(5,4))`; for several panels, e.g.

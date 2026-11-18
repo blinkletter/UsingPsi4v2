@@ -1,0 +1,34 @@
+[
+  {
+    "Quantity":"E HF\/6-311++G(d,p) (Eh)",
+    "Value":-116.2216480342
+  },
+  {
+    "Quantity":"E B3LYP\/6-311++G(d,p) (Eh)",
+    "Value":-117.0024788954
+  },
+  {
+    "Quantity":"C-C length (A)",
+    "Value":1.3724808869
+  },
+  {
+    "Quantity":"C-C-C angle (deg)",
+    "Value":118.0447085898
+  },
+  {
+    "Quantity":"Optimization steps",
+    "Value":8.0
+  },
+  {
+    "Quantity":"pi1 energy (Eh)",
+    "Value":-0.581884667
+  },
+  {
+    "Quantity":"pi2 energy (Eh)",
+    "Value":-0.3874496835
+  },
+  {
+    "Quantity":"pi3 energy (Eh)",
+    "Value":-0.217993397
+  }
+]

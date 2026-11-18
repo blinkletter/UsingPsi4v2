@@ -1,0 +1,194 @@
+[
+  {
+    "Distance":1.45,
+    "Final distance":1.4499998851,
+    "Energy":-232.9995495534,
+    "Steps":7
+  },
+  {
+    "Distance":1.5,
+    "Final distance":1.5000004317,
+    "Energy":-233.0074051793,
+    "Steps":6
+  },
+  {
+    "Distance":1.55,
+    "Final distance":1.5500003836,
+    "Energy":-233.0091272794,
+    "Steps":6
+  },
+  {
+    "Distance":1.6,
+    "Final distance":1.6000002509,
+    "Energy":-233.0061114786,
+    "Steps":6
+  },
+  {
+    "Distance":1.65,
+    "Final distance":1.6499999593,
+    "Energy":-232.9994860208,
+    "Steps":9
+  },
+  {
+    "Distance":1.7,
+    "Final distance":1.6999999421,
+    "Energy":-232.9901644264,
+    "Steps":9
+  },
+  {
+    "Distance":1.75,
+    "Final distance":1.7499999139,
+    "Energy":-232.9789006726,
+    "Steps":9
+  },
+  {
+    "Distance":1.8,
+    "Final distance":1.7999998821,
+    "Energy":-232.9663222132,
+    "Steps":9
+  },
+  {
+    "Distance":1.85,
+    "Final distance":1.8499998533,
+    "Energy":-232.9529607567,
+    "Steps":9
+  },
+  {
+    "Distance":1.9,
+    "Final distance":1.9000012714,
+    "Energy":-232.9392774875,
+    "Steps":16
+  },
+  {
+    "Distance":1.95,
+    "Final distance":1.9500014785,
+    "Energy":-232.9256947582,
+    "Steps":15
+  },
+  {
+    "Distance":2.0,
+    "Final distance":2.0000001253,
+    "Energy":-232.9126269394,
+    "Steps":17
+  },
+  {
+    "Distance":2.05,
+    "Final distance":2.0500004766,
+    "Energy":-232.9005426271,
+    "Steps":14
+  },
+  {
+    "Distance":2.1,
+    "Final distance":2.0999999795,
+    "Energy":-232.8900955596,
+    "Steps":17
+  },
+  {
+    "Distance":2.15,
+    "Final distance":2.1499979457,
+    "Energy":-232.882462571,
+    "Steps":14
+  },
+  {
+    "Distance":2.2,
+    "Final distance":2.1999975886,
+    "Energy":-232.8796093082,
+    "Steps":13
+  },
+  {
+    "Distance":2.25,
+    "Final distance":2.2499995287,
+    "Energy":-232.8812781436,
+    "Steps":16
+  },
+  {
+    "Distance":2.3,
+    "Final distance":2.2999995163,
+    "Energy":-232.885186433,
+    "Steps":12
+  },
+  {
+    "Distance":2.35,
+    "Final distance":2.3500013297,
+    "Energy":-232.8900394645,
+    "Steps":11
+  },
+  {
+    "Distance":2.4,
+    "Final distance":2.4000016921,
+    "Energy":-232.895206456,
+    "Steps":11
+  },
+  {
+    "Distance":2.45,
+    "Final distance":2.4500011433,
+    "Energy":-232.9003525374,
+    "Steps":12
+  },
+  {
+    "Distance":2.5,
+    "Final distance":2.5000007118,
+    "Energy":-232.9052916715,
+    "Steps":11
+  },
+  {
+    "Distance":2.55,
+    "Final distance":2.5500008339,
+    "Energy":-232.9099214596,
+    "Steps":9
+  },
+  {
+    "Distance":2.6,
+    "Final distance":2.6000008006,
+    "Energy":-232.9141907354,
+    "Steps":8
+  },
+  {
+    "Distance":2.65,
+    "Final distance":2.6500009306,
+    "Energy":-232.9180780622,
+    "Steps":8
+  },
+  {
+    "Distance":2.7,
+    "Final distance":2.7000010803,
+    "Energy":-232.9215834245,
+    "Steps":8
+  },
+  {
+    "Distance":2.75,
+    "Final distance":2.7500002591,
+    "Energy":-232.9247195322,
+    "Steps":7
+  },
+  {
+    "Distance":2.8,
+    "Final distance":2.8000012732,
+    "Energy":-232.9275072237,
+    "Steps":7
+  },
+  {
+    "Distance":2.85,
+    "Final distance":2.850001121,
+    "Energy":-232.9299718883,
+    "Steps":9
+  },
+  {
+    "Distance":2.9,
+    "Final distance":2.9000005297,
+    "Energy":-232.9321415495,
+    "Steps":9
+  },
+  {
+    "Distance":2.95,
+    "Final distance":2.9500002952,
+    "Energy":-232.9340446857,
+    "Steps":9
+  },
+  {
+    "Distance":3.0,
+    "Final distance":3.0000005468,
+    "Energy":-232.9357093385,
+    "Steps":9
+  }
+]

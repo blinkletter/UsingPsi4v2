@@ -22,4 +22,7 @@ refs/
 # Psi4 scratch files written next to the notebooks on every run
 psi.*.clean
 timer.dat
-ijk.dat
+ijk.dat# Optking IRC and Psi4 normal-mode files written next to the notebooks (ch4C, ch5)
+ircprogress.log
+irc_traj.*.xyz
+*.molden_normal_modes

@@ -1,0 +1,30 @@
+[
+  {
+    "Conformer":"syn",
+    "Torsion (deg)":0.0000057364,
+    "Energy (Eh)":-156.4228464267,
+    "Steps":9,
+    "Delta E (kJ\/mol)":25.2572899161
+  },
+  {
+    "Conformer":"gauche",
+    "Torsion (deg)":60.0,
+    "Energy (Eh)":-156.4310615664,
+    "Steps":7,
+    "Delta E (kJ\/mol)":3.6884435281
+  },
+  {
+    "Conformer":"eclipsed",
+    "Torsion (deg)":120.0,
+    "Energy (Eh)":-156.4267262853,
+    "Steps":5,
+    "Delta E (kJ\/mol)":15.0707225492
+  },
+  {
+    "Conformer":"anti",
+    "Torsion (deg)":179.9999962836,
+    "Energy (Eh)":-156.4324664203,
+    "Steps":4,
+    "Delta E (kJ\/mol)":0.0
+  }
+]
