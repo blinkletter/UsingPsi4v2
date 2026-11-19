@@ -143,21 +143,31 @@ def isosurface(cube, isoval):
 
 # ------------------------------------------------------------------ public helpers
 
-def show_molecule(mol, interactive=True, ax=None, **view):
-    """Ball-and-stick model of a psi4 Molecule: py3Dmol viewer, or a static picture."""
+def show_molecule(mol, interactive=True, ax=None, numbers=False, **view):
+    """Ball-and-stick model of a psi4 Molecule: py3Dmol viewer, or a static picture.
+
+    numbers=True writes each atom's number (counting from 1) beside it.
+    """
+    symbols, xyz = _molecule_atoms(mol)
     if interactive:
         v = py3Dmol.view(width=400, height=300)
         v.addModel(mol.save_string_xyz_file(), "xyz")
         v.setStyle({"stick": {"radius": 0.05}, "sphere": {"scale": 0.15}})     # thinner bonds (default is 0.25)
 #        v.setStyle({"stick": {}, "sphere": {"scale": 0.25}}) # traditional settings
 #        v.setViewStyle({"style": "outline", "color": "black", "width": 0.03}) # set outline
+        if numbers:
+            for n, (x, y, z) in enumerate(xyz, start=1):
+                v.addLabel(str(n), {"position": {"x": x, "y": y, "z": z}, "fontColor": "black",
+                                    "fontSize": 14, "backgroundOpacity": 0.0})
         v.setBackgroundColor("#f2f2f2")
         v.zoomTo()
         v.show()
         return
-    symbols, xyz = _molecule_atoms(mol)
     ax, created = _new_3d_axes(ax, figsize=(3, 3))
     _draw_atoms(ax, symbols, xyz)
+    if numbers:
+        for n, (x, y, z) in enumerate(xyz, start=1):
+            ax.text(x, y, z, f" {n}", fontsize=8, zorder=10)
     _finish_axes(ax, xyz, pad=0.6, **view)
     if created:
         plt.show()
@@ -219,11 +229,16 @@ def show_orbitals(cube_paths, titles=None, mol=None, isoval=0.05, interactive=Tr
 
 
 def show_density(cube_path, isoval=0.001, esp_cube_path=None, esp_range=0.05,
-                 mol=None, interactive=True, ax=None, transparency=None, **view):
+                 mol=None, interactive=True, ax=None, transparency=None,
+                 esp_min=None, esp_max=None, **view):
     """Density isosurface; with esp_cube_path, coloured by the ESP (red negative, blue positive).
 
+    The colour scale runs from -esp_range to +esp_range; give esp_min and esp_max
+    instead for a scale that is not centred on zero (e.g. for an ion).
     transparency: 0 = solid surface, 0.75 = 75 % see-through, 1 = invisible.
     """
+    esp_min = -esp_range if esp_min is None else esp_min
+    esp_max = esp_range if esp_max is None else esp_max
     if interactive:
         dens = Path(cube_path).read_text()
         v = py3Dmol.view(width=400, height=350)
@@ -236,7 +251,7 @@ def show_density(cube_path, isoval=0.001, esp_cube_path=None, esp_range=0.05,
         if esp_cube_path is not None:
             opts = {"isoval": isoval, "opacity": _opacity(transparency, 0.9),
                     "voldata": Path(esp_cube_path).read_text(), "volformat": "cube",
-                    "volscheme": {"gradient": "rwb", "min": -esp_range, "max": esp_range}}
+                    "volscheme": {"gradient": "rwb", "min": esp_min, "max": esp_max}}
         v.addVolumetricData(dens, "cube", opts)
         v.setBackgroundColor("#f2f2f2")
         v.zoomTo()
@@ -254,7 +269,7 @@ def show_density(cube_path, isoval=0.001, esp_cube_path=None, esp_range=0.05,
         centres = tris.mean(1)
         grid_index = np.linalg.solve(esp["axes"].T, (centres - esp["origin"]).T)   # Å -> grid
         values = map_coordinates(esp["data"], grid_index, order=1)
-        colours = plt.get_cmap("RdBu")(mcolors.Normalize(-esp_range, esp_range)(values))
+        colours = plt.get_cmap("RdBu")(mcolors.Normalize(esp_min, esp_max)(values))
         _draw_surface(ax, tris, colours, alpha=_opacity(transparency, 0.9))
     _finish_axes(ax, np.vstack([cube["xyz"], tris.reshape(-1, 3)]), **view)
     if created:
@@ -315,6 +330,14 @@ def show_mode(mol, vectors, interactive=True, amplitude=1.0, ax=None, **view):
         plt.show()
 
 
+def show_vibration(wfn, mode=0, interactive=True, amplitude=1.0, **view):
+    """Normal mode number `mode` (0 = lowest frequency) of a psi4.frequency wavefunction."""
+    vib = wfn.frequency_analysis
+    is_vib = np.array([t == "V" for t in vib["TRV"].data])          # skip translations/rotations
+    vectors = vib["x"].data[:, is_vib][:, mode].reshape(-1, 3)
+    show_mode(wfn.molecule(), vectors, interactive=interactive, amplitude=amplitude, **view)
+
+
 def bond_length(mol, i, j):
     """Return the distance between atoms i and j in angstroms (0-based indices)."""
     i = i-1; j = j-1  # convert to 0-based indices
@@ -330,6 +353,17 @@ def bond_angle(mol, i, j, k):
     b = xyz[k] - xyz[j]
     cos_angle = np.dot(a, b) / (np.linalg.norm(a) * np.linalg.norm(b))
     return np.degrees(np.arccos(cos_angle))
+
+
+def dihedral(mol, i, j, k, l):
+    """Return the i-j-k-l torsion angle in degrees, looking down the j-k bond (atoms counted from 1)."""
+    xyz = mol.geometry().np[[i - 1, j - 1, k - 1, l - 1]]
+    b1, b2, b3 = xyz[1] - xyz[0], xyz[2] - xyz[1], xyz[3] - xyz[2]
+    n1, n2 = np.cross(b1, b2), np.cross(b2, b3)
+    x = np.dot(n1, n2)
+    y = np.dot(np.cross(n1, n2), b2) / np.linalg.norm(b2)
+    return np.degrees(np.arctan2(y, x))
+
 
 def history_to_xyz(mol, history):
     """Build a multi-frame XYZ string from an optimization history."""
@@ -365,3 +399,49 @@ def search_file(filename, text):
         for number, line in enumerate(f, start=1):
             if text.lower() in line.lower():
                 print(f"{number:6d}: {line.rstrip()}")
+
+
+def new_output(filename):
+    """Send Psi4 output to filename (and its .log), first detaching the .log of any earlier job.
+
+    psi4.set_output_file() alone leaves old .log files attached, so every later job
+    would also write its log into them.
+    """
+    import logging
+    logger = logging.getLogger("psi4")
+    for handler in logger.handlers[:]:
+        if isinstance(handler, logging.FileHandler):
+            handler.close()
+            logger.removeHandler(handler)
+    psi4.set_output_file(str(filename), False)
+
+
+def c1_copy(mol):
+    """A new psi4 Molecule with the same atoms and charge, but no symmetry and no reorientation."""
+    xyz = mol.geometry().np * BOHR2ANG
+    lines = [f"{int(mol.molecular_charge())} {mol.multiplicity()}"]
+    lines += [f"{mol.symbol(i)} {x:.10f} {y:.10f} {z:.10f}" for i, (x, y, z) in enumerate(xyz)]
+    lines += ["symmetry c1", "no_reorient", "no_com"]
+    return psi4.geometry("\n".join(lines))
+
+
+def read_irc(filename):
+    """Read an optking IRC trajectory file (coordinates in bohr) into a list of frames.
+
+    Each frame is a dict: "Step" (int), "Energy" (hartree), "xyz" (natom x 3 array, Å)
+    and "text" (the frame as XYZ text in Å, ready for show_frames).
+    """
+    lines = Path(filename).read_text().splitlines()
+    frames, i = [], 0
+    while i < len(lines) and lines[i].strip():
+        natom = int(lines[i])
+        title = lines[i + 1].split()                     # IRC trajectory step: 1. E: -232.8...
+        atoms = [l.split() for l in lines[i + 2:i + 2 + natom]]
+        symbols = [a[0] for a in atoms]
+        xyz = np.array([a[1:4] for a in atoms], float) * BOHR2ANG
+        text = f"{natom}\n{lines[i + 1].strip()}\n"
+        text += "".join(f"{s} {x:10.6f} {y:10.6f} {z:10.6f}\n" for s, (x, y, z) in zip(symbols, xyz))
+        frames.append({"Step": int(float(title[3])), "Energy": float(title[5]),
+                       "text": text, "xyz": xyz})
+        i += 2 + natom
+    return frames

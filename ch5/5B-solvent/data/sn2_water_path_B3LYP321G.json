@@ -1,43 +1,73 @@
 [
   {
+    "stride":-4.5,
+    "energy water":-955.8744506356,
+    "solvation":-0.0987042139
+  },
+  {
+    "stride":-4.2,
+    "energy water":-955.8744506356,
+    "solvation":-0.0987042139
+  },
+  {
+    "stride":-3.9,
+    "energy water":-955.8744357451,
+    "solvation":-0.0986839955
+  },
+  {
+    "stride":-3.6,
+    "energy water":-955.8744286916,
+    "solvation":-0.0986749968
+  },
+  {
+    "stride":-3.3,
+    "energy water":-955.8743857842,
+    "solvation":-0.098626418
+  },
+  {
+    "stride":-3.0,
+    "energy water":-955.8741560131,
+    "solvation":-0.0983800247
+  },
+  {
     "stride":-2.7,
-    "energy water":-955.870755657,
-    "solvation":-0.0983368374
+    "energy water":-955.8741984985,
+    "solvation":-0.0984274953
   },
   {
     "stride":-2.4,
-    "energy water":-955.8707556064,
-    "solvation":-0.0983368403
+    "energy water":-955.8743027884,
+    "solvation":-0.0985316202
   },
   {
     "stride":-2.1,
-    "energy water":-955.8730435554,
-    "solvation":-0.0981863771
+    "energy water":-955.8704734083,
+    "solvation":-0.0983839492
   },
   {
     "stride":-1.8,
-    "energy water":-955.87348659,
-    "solvation":-0.0976590128
+    "energy water":-955.873484443,
+    "solvation":-0.0976564947
   },
   {
     "stride":-1.5,
-    "energy water":-955.8723762582,
-    "solvation":-0.0965491398
+    "energy water":-955.8723764424,
+    "solvation":-0.096549283
   },
   {
     "stride":-1.2,
-    "energy water":-955.8711879824,
-    "solvation":-0.0954375544
+    "energy water":-955.8711882278,
+    "solvation":-0.0954380596
   },
   {
     "stride":-0.9,
-    "energy water":-955.8701025013,
-    "solvation":-0.0944817513
+    "energy water":-955.8701044825,
+    "solvation":-0.0944838376
   },
   {
     "stride":-0.6,
-    "energy water":-955.8692396099,
-    "solvation":-0.093755961
+    "energy water":-955.8692400337,
+    "solvation":-0.0937563717
   },
   {
     "stride":-0.3,
@@ -56,37 +86,32 @@
   },
   {
     "stride":0.6,
-    "energy water":-955.8692401909,
-    "solvation":-0.0937565201
+    "energy water":-955.8692405032,
+    "solvation":-0.0937568047
   },
   {
     "stride":0.9,
-    "energy water":-955.8701035751,
-    "solvation":-0.0944829342
+    "energy water":-955.8701020688,
+    "solvation":-0.0944813453
   },
   {
     "stride":1.2,
-    "energy water":-955.8711868931,
-    "solvation":-0.0954364786
+    "energy water":-955.871187639,
+    "solvation":-0.0954371433
   },
   {
     "stride":1.5,
-    "energy water":-955.872376499,
-    "solvation":-0.0965494306
+    "energy water":-955.8723753021,
+    "solvation":-0.0965480234
   },
   {
     "stride":1.8,
-    "energy water":-955.873484568,
-    "solvation":-0.0976565788
+    "energy water":-955.8720189795,
+    "solvation":-0.0971303716
   },
   {
     "stride":2.1,
-    "energy water":-955.8708739319,
-    "solvation":-0.0983361282
-  },
-  {
-    "stride":2.4,
-    "energy water":-955.870873948,
-    "solvation":-0.0983361291
+    "energy water":-955.8720189872,
+    "solvation":-0.0971303663
   }
 ]

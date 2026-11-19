@@ -1,7 +1,7 @@
 [
   {
     "Quantity":"E HF\/3-21G (Eh)",
-    "Value":-229.419371618
+    "Value":-229.4193716179
   },
   {
     "Quantity":"Optimization steps",
@@ -9,26 +9,26 @@
   },
   {
     "Quantity":"C-C length (A)",
-    "Value":1.3845282722
+    "Value":1.3845282651
   },
   {
     "Quantity":"C-H length (A)",
-    "Value":1.0721206548
+    "Value":1.07212017
   },
   {
     "Quantity":"E HF\/STO-3G (Eh)",
-    "Value":-227.8914289313
+    "Value":-227.8914288732
   },
   {
     "Quantity":"pi1 energy B3LYP (Eh)",
-    "Value":-0.3762232337
+    "Value":-0.3762232212
   },
   {
     "Quantity":"HOMO energy B3LYP (Eh)",
-    "Value":-0.261065291
+    "Value":-0.2610652822
   },
   {
     "Quantity":"LUMO energy B3LYP (Eh)",
-    "Value":-0.0160007015
+    "Value":-0.016000692
   }
 ]

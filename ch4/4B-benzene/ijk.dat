@@ -1,0 +1,6 @@
+Total number of IJK combinations =: 680
+Num. of IJK with (Gi,Gj,Gk)=(0,0,0) =: 680
+    thread 0: first_ijk=0,  last_ijk=169
+    thread 1: first_ijk=170,  last_ijk=339
+    thread 2: first_ijk=340,  last_ijk=509
+    thread 3: first_ijk=510,  last_ijk=679

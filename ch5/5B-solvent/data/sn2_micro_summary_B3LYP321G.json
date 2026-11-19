@@ -3,8 +3,8 @@
     "System":"micro",
     "Structure":"TS",
     "Energy":-1259.7790315339,
-    "C3-Cl1":2.3680883787,
-    "C3-Cl2":2.3683064518,
+    "C3-Cl1":2.368088395,
+    "C3-Cl2":2.3683064352,
     "Barrier (kJ\/mol)":0.0
   },
   {
@@ -18,33 +18,33 @@
   {
     "System":"micro",
     "Structure":"complex (backward)",
-    "Energy":-1259.7809160073,
-    "C3-Cl1":2.7625652096,
-    "C3-Cl2":2.0560240768,
-    "Barrier (kJ\/mol)":4.9476841959
+    "Energy":-1259.780915785,
+    "C3-Cl1":2.7619996274,
+    "C3-Cl2":2.0560523703,
+    "Barrier (kJ\/mol)":4.9471006218
   },
   {
     "System":"micro",
     "Structure":"complex (forward)",
-    "Energy":-1259.7809154068,
-    "C3-Cl1":2.0559784094,
-    "C3-Cl2":2.7627293181,
-    "Barrier (kJ\/mol)":4.946107529
+    "Energy":-1259.78091549,
+    "C3-Cl1":2.055954556,
+    "C3-Cl2":2.7627375223,
+    "Barrier (kJ\/mol)":4.9463259053
   },
   {
     "System":"bare",
     "Structure":"complex (backward)",
-    "Energy":-955.777435552,
-    "C3-Cl1":2.0915458137,
-    "C3-Cl2":2.7433355201,
-    "Barrier (kJ\/mol)":3.7109375923
+    "Energy":-955.7774346747,
+    "C3-Cl1":2.0916267802,
+    "C3-Cl2":2.7438657058,
+    "Barrier (kJ\/mol)":3.7086343989
   },
   {
     "System":"bare",
     "Structure":"complex (forward)",
-    "Energy":-955.7774347523,
-    "C3-Cl1":2.7440719485,
-    "C3-Cl2":2.0914753266,
-    "Barrier (kJ\/mol)":3.70883805
+    "Energy":-955.7774347382,
+    "C3-Cl1":2.7435863123,
+    "C3-Cl2":2.0914720835,
+    "Barrier (kJ\/mol)":3.7088010215
   }
 ]

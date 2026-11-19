@@ -67,86 +67,86 @@
   },
   {
     "Distance":2.0,
-    "Final distance":2.0000001253,
-    "Energy":-232.9126269394,
+    "Final distance":2.0000001251,
+    "Energy":-232.9126269399,
     "Steps":17
   },
   {
     "Distance":2.05,
-    "Final distance":2.0500004766,
-    "Energy":-232.9005426271,
+    "Final distance":2.0500004677,
+    "Energy":-232.9005426264,
     "Steps":14
   },
   {
     "Distance":2.1,
-    "Final distance":2.0999999795,
-    "Energy":-232.8900955596,
-    "Steps":17
+    "Final distance":2.1000002384,
+    "Energy":-232.8900959624,
+    "Steps":16
   },
   {
     "Distance":2.15,
-    "Final distance":2.1499979457,
-    "Energy":-232.882462571,
-    "Steps":14
+    "Final distance":2.1499992976,
+    "Energy":-232.8824625355,
+    "Steps":11
   },
   {
     "Distance":2.2,
-    "Final distance":2.1999975886,
-    "Energy":-232.8796093082,
+    "Final distance":2.1999974414,
+    "Energy":-232.8796092752,
     "Steps":13
   },
   {
     "Distance":2.25,
-    "Final distance":2.2499995287,
-    "Energy":-232.8812781436,
+    "Final distance":2.2499996672,
+    "Energy":-232.8812781561,
     "Steps":16
   },
   {
     "Distance":2.3,
-    "Final distance":2.2999995163,
-    "Energy":-232.885186433,
-    "Steps":12
+    "Final distance":2.300000636,
+    "Energy":-232.8851868509,
+    "Steps":13
   },
   {
     "Distance":2.35,
-    "Final distance":2.3500013297,
-    "Energy":-232.8900394645,
-    "Steps":11
+    "Final distance":2.3500010469,
+    "Energy":-232.8900396009,
+    "Steps":12
   },
   {
     "Distance":2.4,
-    "Final distance":2.4000016921,
-    "Energy":-232.895206456,
+    "Final distance":2.4000001927,
+    "Energy":-232.8952064382,
     "Steps":11
   },
   {
     "Distance":2.45,
-    "Final distance":2.4500011433,
-    "Energy":-232.9003525374,
+    "Final distance":2.4499998071,
+    "Energy":-232.9003524226,
     "Steps":12
   },
   {
     "Distance":2.5,
-    "Final distance":2.5000007118,
-    "Energy":-232.9052916715,
+    "Final distance":2.5000007359,
+    "Energy":-232.9052916714,
     "Steps":11
   },
   {
     "Distance":2.55,
-    "Final distance":2.5500008339,
-    "Energy":-232.9099214596,
+    "Final distance":2.5500008432,
+    "Energy":-232.9099214655,
     "Steps":9
   },
   {
     "Distance":2.6,
-    "Final distance":2.6000008006,
-    "Energy":-232.9141907354,
+    "Final distance":2.6000008014,
+    "Energy":-232.9141907353,
     "Steps":8
   },
   {
     "Distance":2.65,
-    "Final distance":2.6500009306,
-    "Energy":-232.9180780622,
+    "Final distance":2.6500009307,
+    "Energy":-232.9180780621,
     "Steps":8
   },
   {

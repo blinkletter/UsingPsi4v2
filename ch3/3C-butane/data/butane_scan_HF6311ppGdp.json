@@ -1,7 +1,7 @@
 [
   {
     "Torsion":0,
-    "Final torsion":0.000397379,
+    "Final torsion":0.0003973798,
     "Energy":-157.3303330669,
     "Steps":4,
     "Max gradient":0.0000487702
@@ -127,7 +127,7 @@
   },
   {
     "Torsion":180,
-    "Final torsion":179.9993031957,
+    "Final torsion":179.9993031952,
     "Energy":-157.3404284126,
     "Steps":3,
     "Max gradient":0.0000802551
