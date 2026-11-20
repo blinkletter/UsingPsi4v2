@@ -1,0 +1,140 @@
+[
+  {
+    "Torsion (deg)":0,
+    "Energy (Eh)":-154.0539432744,
+    "Steps":12,
+    "Delta E (kJ\/mol)":14.4743863595
+  },
+  {
+    "Torsion (deg)":5,
+    "Energy (Eh)":-154.0539921111,
+    "Steps":3,
+    "Delta E (kJ\/mol)":14.3461656027
+  },
+  {
+    "Torsion (deg)":10,
+    "Energy (Eh)":-154.0541307629,
+    "Steps":3,
+    "Delta E (kJ\/mol)":13.982135502
+  },
+  {
+    "Torsion (deg)":20,
+    "Energy (Eh)":-154.0545762118,
+    "Steps":4,
+    "Delta E (kJ\/mol)":12.812609474
+  },
+  {
+    "Torsion (deg)":30,
+    "Energy (Eh)":-154.0550028385,
+    "Steps":4,
+    "Delta E (kJ\/mol)":11.6925012857
+  },
+  {
+    "Torsion (deg)":35,
+    "Energy (Eh)":-154.05511834,
+    "Steps":3,
+    "Delta E (kJ\/mol)":11.3892521287
+  },
+  {
+    "Torsion (deg)":40,
+    "Energy (Eh)":-154.0551324736,
+    "Steps":3,
+    "Delta E (kJ\/mol)":11.3521443516
+  },
+  {
+    "Torsion (deg)":45,
+    "Energy (Eh)":-154.0550307009,
+    "Steps":3,
+    "Delta E (kJ\/mol)":11.6193486975
+  },
+  {
+    "Torsion (deg)":50,
+    "Energy (Eh)":-154.0548094776,
+    "Steps":3,
+    "Delta E (kJ\/mol)":12.2001701667
+  },
+  {
+    "Torsion (deg)":60,
+    "Energy (Eh)":-154.0540448089,
+    "Steps":3,
+    "Delta E (kJ\/mol)":14.2078076972
+  },
+  {
+    "Torsion (deg)":80,
+    "Energy (Eh)":-154.0518628044,
+    "Steps":3,
+    "Delta E (kJ\/mol)":19.9366596872
+  },
+  {
+    "Torsion (deg)":85,
+    "Energy (Eh)":-154.0513572001,
+    "Steps":3,
+    "Delta E (kJ\/mol)":21.2641235869
+  },
+  {
+    "Torsion (deg)":90,
+    "Energy (Eh)":-154.0509342212,
+    "Steps":3,
+    "Delta E (kJ\/mol)":22.3746545253
+  },
+  {
+    "Torsion (deg)":95,
+    "Energy (Eh)":-154.0506279371,
+    "Steps":3,
+    "Delta E (kJ\/mol)":23.1788032559
+  },
+  {
+    "Torsion (deg)":100,
+    "Energy (Eh)":-154.0504704413,
+    "Steps":3,
+    "Delta E (kJ\/mol)":23.5923086129
+  },
+  {
+    "Torsion (deg)":105,
+    "Energy (Eh)":-154.050489009,
+    "Steps":3,
+    "Delta E (kJ\/mol)":23.5435591048
+  },
+  {
+    "Torsion (deg)":110,
+    "Energy (Eh)":-154.0507015925,
+    "Steps":3,
+    "Delta E (kJ\/mol)":22.9854211717
+  },
+  {
+    "Torsion (deg)":120,
+    "Energy (Eh)":-154.0517054594,
+    "Steps":4,
+    "Delta E (kJ\/mol)":20.3497689903
+  },
+  {
+    "Torsion (deg)":140,
+    "Energy (Eh)":-154.0551448524,
+    "Steps":4,
+    "Delta E (kJ\/mol)":11.319643891
+  },
+  {
+    "Torsion (deg)":160,
+    "Energy (Eh)":-154.0582689448,
+    "Steps":4,
+    "Delta E (kJ\/mol)":3.1173402967
+  },
+  {
+    "Torsion (deg)":170,
+    "Energy (Eh)":-154.0591534759,
+    "Steps":4,
+    "Delta E (kJ\/mol)":0.795004247
+  },
+  {
+    "Torsion (deg)":175,
+    "Energy (Eh)":-154.0593803832,
+    "Steps":3,
+    "Delta E (kJ\/mol)":0.19925914
+  },
+  {
+    "Torsion (deg)":180,
+    "Energy (Eh)":-154.0594565416,
+    "Steps":4,
+    "Delta E (kJ\/mol)":-0.0006945771
+  }
+]
