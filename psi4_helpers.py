@@ -339,20 +339,20 @@ def show_vibration(wfn, mode=0, interactive=True, amplitude=1.0, **view):
 
 
 def bond_length(mol, i, j):
-    """Return the distance between atoms i and j in angstroms (0-based indices)."""
+    """Return the distance between atoms i and j in angstroms (atoms numbered from 1)."""
     i = i-1; j = j-1  # convert to 0-based indices
     xyz = mol.geometry().np * psi4.constants.bohr2angstroms
-    return np.linalg.norm(xyz[i] - xyz[j])
+    return float(np.linalg.norm(xyz[i] - xyz[j]))
 
 
 def bond_angle(mol, i, j, k):
-    """Return the i-j-k angle in degrees, with j as the central atom (0-based indices)."""
+    """Return the i-j-k angle in degrees, with j as the central atom (atoms numbered from 1)."""
     i = i-1; j = j-1; k = k-1  # convert to 0-based indices
     xyz = mol.geometry().np
     a = xyz[i] - xyz[j]
     b = xyz[k] - xyz[j]
     cos_angle = np.dot(a, b) / (np.linalg.norm(a) * np.linalg.norm(b))
-    return np.degrees(np.arccos(cos_angle))
+    return float(np.degrees(np.arccos(cos_angle)))
 
 
 def dihedral(mol, i, j, k, l):
@@ -362,7 +362,7 @@ def dihedral(mol, i, j, k, l):
     n1, n2 = np.cross(b1, b2), np.cross(b2, b3)
     x = np.dot(n1, n2)
     y = np.dot(np.cross(n1, n2), b2) / np.linalg.norm(b2)
-    return np.degrees(np.arctan2(y, x))
+    return float(np.degrees(np.arctan2(y, x)))
 
 
 def history_to_xyz(mol, history):

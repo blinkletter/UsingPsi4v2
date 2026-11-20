@@ -61,6 +61,8 @@ project:
         - file: ch4/4A-allyl-cation/ch4A-allyl-cation.ipynb
         - file: ch4/4B-benzene/ch4B-benzene.ipynb
         - file: ch4/4C-butadiene/ch4C-butadiene.ipynb
+          children:
+          - file: ch4/4C-butadiene/ch4C-butadiene-v2.ipynb
     - file: ch5/ch5-reactions.ipynb
       children:
         - file: ch5/5A-diels-alder/ch5A-diels-alder.ipynb
