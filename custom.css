@@ -27,6 +27,6 @@ article {
   overflow-y: auto;
 }
 .scroll-output [data-name="outputs-container"] {
-  max-height: 10rem;
+  max-height: 18rem;
   overflow-y: auto;
 }

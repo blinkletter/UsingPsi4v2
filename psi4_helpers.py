@@ -11,6 +11,7 @@ Static isosurfaces use scikit-image (``skimage.measure.marching_cubes``).
 """
 
 from pathlib import Path
+import json
 
 import numpy as np
 import matplotlib.pyplot as plt
@@ -18,6 +19,7 @@ from matplotlib import colors as mcolors
 from mpl_toolkits.mplot3d.art3d import Poly3DCollection
 import psi4
 import py3Dmol
+import IPython.display
 
 BOHR2ANG = psi4.constants.bohr2angstroms
 
@@ -298,6 +300,124 @@ def show_frames(xyz_text, interactive=True, nshow=5, interval=500, loop="forward
         _draw_atoms(ax, symbols, xyz, scale=0.6)
         _finish_axes(ax, xyz, pad=0.6, **{"title": f"frame {k + 1} of {len(frames)}", **view})
     plt.show()
+
+
+def _kabsch(P, Q):
+    """Rotation matrix R that best superimposes centred points P onto centred points Q (P @ R ≈ Q)."""
+    U, _, Vt = np.linalg.svd(P.T @ Q)
+    d = np.sign(np.linalg.det(U @ Vt))          # guard against a reflection
+    return U @ np.diag([1.0, 1.0, d]) @ Vt
+
+
+def scan_to_xyz(structures, labels=None, align=None):
+    """Multi-frame XYZ string from a series of structures, such as the points of a scan.
+
+    structures: psi4 Molecules, or single-frame XYZ strings in Å (e.g. mol.save_string_xyz_file()).
+    labels:     one comment line per frame (for example "D = 60°").
+    align:      atom numbers (counting from 1) to superimpose on the first frame, so the
+                picture does not jump around when Psi4 reorients a structure.
+                None = use all atoms; False = no alignment.
+    """
+    if labels is None:
+        labels = [f"point {k + 1}" for k in range(len(structures))]
+    ref = None
+    frames = []
+    for s, label in zip(structures, labels):
+        if isinstance(s, str):
+            _, symbols, xyz = _xyz_frames(s)[0]
+        else:
+            symbols, xyz = _molecule_atoms(s)
+        if align is not False:
+            idx = np.arange(len(symbols)) if align is None else np.array(align) - 1
+            centre = xyz[idx].mean(axis=0)
+            if ref is None:
+                ref = xyz[idx] - centre                 # first frame is the reference
+            xyz = (xyz - centre) @ _kabsch(xyz[idx] - centre, ref)
+        lines = [str(len(symbols)), str(label)]
+        lines += [f"{sym:2s} {x:12.6f} {y:12.6f} {z:12.6f}" for sym, (x, y, z) in zip(symbols, xyz)]
+        frames.append("\n".join(lines))
+    return "\n".join(frames) + "\n"
+
+
+def show_scan(xyz_text, labels=None, interactive=True, interval=300, start=0,
+              width=400, height=300, nshow=5, **view):
+    """A multi-frame XYZ string as a py3Dmol viewer with a scrubber bar and a play button.
+
+    labels:   text shown beside the slider for each frame (defaults to the XYZ comment lines).
+    interval: milliseconds per frame when playing.
+    start:    the frame shown first (counting from 0).
+    The controls are plain JavaScript, so they also work in the static web book and on Colab.
+    interactive=False draws a static strip of nshow frames instead (see show_frames).
+    """
+    if not interactive:
+        show_frames(xyz_text, interactive=False, nshow=nshow, **view)
+        return
+    if labels is None:
+        labels = [f[0] for f in _xyz_frames(xyz_text)]     # the comment line of each frame
+    n = len(labels)
+
+    v = py3Dmol.view(width=width, height=height)
+    v.addModelsAsFrames(xyz_text, "xyz")
+    v.setStyle({"stick": {"radius": 0.05}, "sphere": {"scale": 0.15}})     # thinner bonds (default is 0.25)
+    v.setBackgroundColor("#f2f2f2")
+    v.zoomTo()
+    v.setFrame(start)
+    viewer_html = v.write_html()          # HTML fragment; this also sets v.uniqueid
+    uid = v.uniqueid
+
+    controls = f"""
+<div id="scan_{uid}" style="width:{width}px; font-family:sans-serif; font-size:13px;
+     display:flex; align-items:center; gap:8px; margin-top:4px;">
+  <button type="button" id="play_{uid}" style="width:3.5em;">Play</button>
+  <input type="range" id="slider_{uid}" min="0" max="{n - 1}" step="1" value="{start}" style="flex:1;">
+  <span id="label_{uid}" style="min-width:8em;"></span>
+</div>
+<script>
+(function() {{
+  var labels = {json.dumps([str(s) for s in labels])};
+  var slider = document.getElementById("slider_{uid}");
+  var label  = document.getElementById("label_{uid}");
+  var button = document.getElementById("play_{uid}");
+  var timer  = null;
+
+  // Wait for py3Dmol's viewer: newer py3Dmol has a promise, older only a global variable
+  function whenReady(callback) {{
+    if (typeof viewer_ready_{uid} !== "undefined") {{ viewer_ready_{uid}.then(callback); return; }}
+    var poll = setInterval(function() {{
+      if (typeof viewer_{uid} !== "undefined" && viewer_{uid} !== null) {{
+        clearInterval(poll); callback(viewer_{uid});
+      }}
+    }}, 100);
+  }}
+
+  whenReady(function(viewer) {{
+    function show(k) {{
+      slider.value = k;
+      label.textContent = labels[k];
+      Promise.resolve(viewer.setFrame(k)).then(function() {{ viewer.render(); }});
+    }}
+    function stop() {{ clearInterval(timer); timer = null; button.textContent = "Play"; }}
+
+    slider.addEventListener("input", function() {{ stop(); show(parseInt(slider.value)); }});
+    button.addEventListener("click", function() {{
+      if (timer) {{ stop(); return; }}
+      button.textContent = "Pause";
+      if (parseInt(slider.value) >= labels.length - 1) show(0);   // restart from the beginning
+      timer = setInterval(function() {{
+        var k = parseInt(slider.value) + 1;
+        if (k >= labels.length) {{ stop(); return; }}
+        show(k);
+      }}, {interval});
+    }});
+    show({start});
+  }});
+}})();
+</script>
+"""
+    html = viewer_html + controls
+    # Same output types py3Dmol uses, so it renders in Jupyter, JupyterLab, Colab and MyST
+    IPython.display.publish_display_data({"application/3dmoljs_load.v0": html, "text/html": html},
+                                         metadata={})
 
 
 def show_mode(mol, vectors, interactive=True, amplitude=1.0, ax=None, **view):
