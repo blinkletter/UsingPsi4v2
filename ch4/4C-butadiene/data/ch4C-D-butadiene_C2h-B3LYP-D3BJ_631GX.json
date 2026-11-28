@@ -1,0 +1,26 @@
+{
+  "D": -180.0,
+  "E": -156.00292879823283,
+  "steps": 5.0,
+  "E_homo": -0.22895954371629357,
+  "E_lumo": -0.022332851073690728,
+  "sym": "c2h",
+  "PG": "C2h",
+  "xyz": "10\n\n C   -0.602354956588    1.749304655473    0.000000000000\n C   -0.602354956588    0.409211388992    0.000000000000\n C    0.602354956588   -0.409211388992    0.000000000000\n C    0.602354956588   -1.749304655473    0.000000000000\n H    0.325755002808    2.316605544316    0.000000000000\n H   -1.524407488951    2.322244502824    0.000000000000\n H   -1.550764763970   -0.128567899942    0.000000000000\n H    1.550764763970    0.128567899942    0.000000000000\n H   -0.325755002808   -2.316605544316    0.000000000000\n H    1.524407488951   -2.322244502824    0.000000000000\n",
+  "Z": "    units Angstrom\n    0 1\n    --\n    0 1\n    C           \n    C                 1     rCCterm\n    C                 2     rCCcent      1        aCCC\n    C                 3     rCCterm      2        aCCC      1           D\n    H                 1   rCHtermen      2    aHCCendo      3   tHCCCendo\n    H                 1   rCHtermex      5    aHCHterm      2       tHCHC\n    H                 2     rCHcent      1    aHCCcent      3   tHCCCcent\n    H                 3     rCHcent      4    aHCCcent      2   tHCCCcent\n    H                 4   rCHtermen      3    aHCCendo      2   tHCCCendo\n    H                 4   rCHtermex      9    aHCHterm      3       tHCHC\n\n    D         = -180.0000000000\n    aCCC      =  124.1903287309\n    aHCCcent  =  119.5546505297\n    aHCCendo  =  121.4350750039\n    aHCHterm  =  116.7091648973\n    rCCcent   =    1.4564140271\n    rCCterm   =    1.3400932665\n    rCHcent   =    1.0902695659\n    rCHtermen =    1.0877584269\n    rCHtermex =    1.0855601969\n    tHCCCcent =  180.0000000000\n    tHCCCendo =   -0.0000000000\n    tHCHC     = -180.0000000000\n\n",
+  "var": {
+    "D": -180.0,
+    "aCCC": 124.1903287309,
+    "aHCCcent": 119.5546505297,
+    "aHCCendo": 121.4350750039,
+    "aHCHterm": 116.7091648973,
+    "rCCcent": 1.4564140271,
+    "rCCterm": 1.3400932665,
+    "rCHcent": 1.0902695659,
+    "rCHtermen": 1.0877584269,
+    "rCHtermex": 1.0855601969,
+    "tHCCCcent": 180.0,
+    "tHCCCendo": -0.0,
+    "tHCHC": -180.0
+  }
+}

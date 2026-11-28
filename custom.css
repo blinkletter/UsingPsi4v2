@@ -30,3 +30,15 @@ article {
   max-height: 18rem;
   overflow-y: auto;
 }
+
+/* Margin notes in notebook pages. The theme wraps each notebook cell in a plain
+   block, so the margin class can't reach the margin; pin the note just to the
+   right of the cell instead. On narrow screens it stays in the text. */
+@media (min-width: 1024px) {
+  .myst-jp-nb-block > .myst-aside.col-margin-right {
+    position: absolute;
+    left: calc(100% + 2rem);
+    width: 14rem;
+    height: auto;
+  }
+}
